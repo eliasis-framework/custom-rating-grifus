@@ -1,0 +1,57 @@
+.rating
+  border: none
+  margin-left: 46px
+  margin-top: -4px
+  margin-bottom: -4px
+  float: left
+  >
+    input
+      display: none
+    label:before
+      margin: 5px
+      font-size: 1.25em
+      font-family: FontAwesome
+      display: inline-block
+      content: "\2605"
+    .half:before
+      content: "\2605"
+      position: absolute
+    label
+      float: right
+      font-size: 17.5px
+      cursor: pointer
+      width: 17.5px
+
+.dark > label
+  color: #000
+
+.white > label
+  color: #cccccc
+
+.dark
+  > input:checked ~ label
+    color: #00a0ff
+  &:not(:checked) > label:hover
+    color: #00a0ff
+    ~ label
+      color: #00a0ff
+  >
+    input:checked
+      + label:hover, ~ label:hover
+        color: #FFED85
+    label:hover ~ input:checked ~ label, input:checked ~ label:hover ~ label
+      color: #FFED85
+
+.white
+  > input:checked ~ label
+    color: #ffcc00
+  &:not(:checked) > label:hover
+    color: #ffcc00
+    ~ label
+      color: #ffcc00
+  >
+    input:checked
+      + label:hover, ~ label:hover
+        color: #FFED85
+    label:hover ~ input:checked ~ label, input:checked ~ label:hover ~ label
+      color: #FFED85
