@@ -115,14 +115,6 @@ class CustomRating extends Controller {
             'style',  
             $css['extensionsForGrifusAdmin']
         );
-        WP_Register::add(
-            'style',  
-            $css['eliasisMaterial']
-        );
-        WP_Register::add(
-            'style',  
-            $css['eliasisMaterialIcons']
-        );
     }
 
     /**

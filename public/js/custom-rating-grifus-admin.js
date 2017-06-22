@@ -27,7 +27,7 @@
 
                if (!response) { return; }
 
-               console.log(response);
+               //console.log(response);
 
                if (response.ratings_restarted !== 0) {
 
