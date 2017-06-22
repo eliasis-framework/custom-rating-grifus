@@ -241,8 +241,6 @@ class Rating extends Model {
      * @param string $votes      → votes
      * @param string $rating     → actual rating
      * @param string $totalVotes → total votes
-     *
-     * @return boolean
      */
     private function _updateRating($postID, $votes, $rating = 'N/A', $totalVotes = 'N/B') {
 
