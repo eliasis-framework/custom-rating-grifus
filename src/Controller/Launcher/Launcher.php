@@ -69,7 +69,11 @@ class Launcher extends Controller {
      */
     public function activation() {
 
-        $this->model->createTables();
+        App::id('ExtensionsForGrifus');
+
+        $that = Module::CustomRatingGrifus()->instance('Launcher');
+
+        $that->model->createTables();
     }
 
     /**
@@ -79,9 +83,13 @@ class Launcher extends Controller {
      */
     public function uninstallation() {
 
-        $this->model->deletePostMeta();
+        App::id('ExtensionsForGrifus');
+        
+        $that = Module::CustomRatingGrifus()->instance('Launcher');
 
-        $this->model->removeTables();
+        $that->model->deletePostMeta();
+
+        $that->model->removeTables();
     }
 
     /**

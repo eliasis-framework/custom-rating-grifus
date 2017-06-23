@@ -17,6 +17,8 @@ return [
 
 	'hooks' => [
 
-		['launch-modules', [$namespace . 'Launcher\Launcher', 'init'], 8, 0],
+		['launch-modules', [$namespace.'Launcher\\Launcher', 'init'], 8, 0],
+		['uninstallation', [$namespace.'Launcher\\Launcher', 'uninstallation'], 8, 0],
+		['activation', [$namespace.'Launcher\\Launcher', 'activation'], 8, 0],
 	]
 ];
