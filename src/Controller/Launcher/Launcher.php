@@ -41,7 +41,9 @@ class Launcher extends Controller {
      */
     public function init() {
 
-        if (Module::CustomRatingGrifus()->get('state') === 'active') {
+        $state = Module::CustomRatingGrifus()->get('state');
+
+        if ($state === 'active' || $state === 'outdated') {
 
             App::id('ExtensionsForGrifus');
 
