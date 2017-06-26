@@ -102,18 +102,18 @@ class CustomRating extends Controller {
      */
     public function addStyles() {
 
-        WP_Register::add(
-            'style',  
-            Module::CustomRatingGrifus()->get(
-                'assets', 'css', 'customRatingGrifusAdmin'
-            )
-        );
-
         $css = App::ExtensionsForGrifus()->get('assets', 'css');
 
         WP_Register::add(
             'style',  
             $css['extensionsForGrifusAdmin']
+        );
+
+        WP_Register::add(
+            'style',  
+            Module::CustomRatingGrifus()->get(
+                'assets', 'css', 'customRatingGrifusAdmin'
+            )
         );
     }
 
