@@ -175,18 +175,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/Josantonius/PHP-Hook.git",
-            "reference": "c57c454a67429bd69393534de86ddaeb5982b365"
+            "reference": "c3489456ec2d964467ddc1ee75573b5f694537e7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Josantonius/PHP-Hook/zipball/c57c454a67429bd69393534de86ddaeb5982b365",
-            "reference": "c57c454a67429bd69393534de86ddaeb5982b365",
+            "url": "https://api.github.com/repos/Josantonius/PHP-Hook/zipball/c3489456ec2d964467ddc1ee75573b5f694537e7",
+            "reference": "c3489456ec2d964467ddc1ee75573b5f694537e7",
             "shasum": ""
         },
         "require": {
             "php": "^5.6 || ^7.0"
         },
-        "time": "2017-06-24 17:22:23",
+        "time": "2017-06-26 02:16:52",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -282,12 +282,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/Eliasis-Framework/Module.git",
-            "reference": "2e022538fd75c55b592a5e3c0362c92ec730c13e"
+            "reference": "b6cb835d0bf097c90aa78a7b14d7e01451f52343"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Eliasis-Framework/Module/zipball/2e022538fd75c55b592a5e3c0362c92ec730c13e",
-            "reference": "2e022538fd75c55b592a5e3c0362c92ec730c13e",
+            "url": "https://api.github.com/repos/Eliasis-Framework/Module/zipball/b6cb835d0bf097c90aa78a7b14d7e01451f52343",
+            "reference": "b6cb835d0bf097c90aa78a7b14d7e01451f52343",
             "shasum": ""
         },
         "require": {
@@ -296,7 +296,7 @@
             "josantonius/json": "^1.1.2",
             "php": "^5.6 || ^7.0"
         },
-        "time": "2017-06-24 04:30:00",
+        "time": "2017-06-26 02:39:22",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -446,12 +446,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/Eliasis-Framework/Eliasis.git",
-            "reference": "c4caed0f6bb4dcf462e946d24fdd15138ae04991"
+            "reference": "c955eda920a03fb17af7abb9f119b5ace93ae675"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Eliasis-Framework/Eliasis/zipball/c4caed0f6bb4dcf462e946d24fdd15138ae04991",
-            "reference": "c4caed0f6bb4dcf462e946d24fdd15138ae04991",
+            "url": "https://api.github.com/repos/Eliasis-Framework/Eliasis/zipball/c955eda920a03fb17af7abb9f119b5ace93ae675",
+            "reference": "c955eda920a03fb17af7abb9f119b5ace93ae675",
             "shasum": ""
         },
         "require": {
