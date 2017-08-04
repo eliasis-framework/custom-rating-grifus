@@ -116,6 +116,6 @@ class Rating extends Controller {
      */
     public function restartRating($postID = false) {
 
-        return $this->model->restartRating($postID);
+        return $this->model->restartRating($postID); 
     }
 }
