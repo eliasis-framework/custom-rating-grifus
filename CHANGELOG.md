@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.0.1 - 2017-08-04
+
+* Now, on sites that use WP Super Cache it will automatically clear cache when the ratings change.
+
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->clearCache()` method.
+
 ## 1.0.0 - 2017-05-26
 
 * Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Launcher\Launcher` class.

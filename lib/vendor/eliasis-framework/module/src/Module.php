@@ -751,9 +751,9 @@ class Module {
             throw new ModuleException($message . ': ' . $index . '.', 817);
         }
 
-        $that = self::getInstance();
-
         self::$id = $index;
+
+        $that = self::getInstance();
 
         if (!$params) { return $that; }
 

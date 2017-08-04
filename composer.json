@@ -1,6 +1,6 @@
 {
     "name":        "josantonius/custom-rating-grifus",
-    "version":     "1.0.0",
+    "version":     "1.0.1",
     "description": "Replaces IMDB rating by your own rating system in Grifus theme.",
     "type": "eliasis-module",
     "keywords": [
@@ -34,9 +34,9 @@
     "require": {
         "php": "^5.3 || ^7.0",
         "eliasis-framework/eliasis" : "^1.1.0",
-        "eliasis-framework/module"  : "^1.0.6",
-        "Josantonius/WP_Register"   : "^1.0.2",
-        "Josantonius/WP_Menu"       : "^1.0.0",
+        "eliasis-framework/module"  : "^1.0.7",
+        "Josantonius/WP_Register"   : "^1.0.3",
+        "Josantonius/WP_Menu"       : "^1.0.3",
         "composer/installers"       : "^1.3.0"
     },
     "autoload": {

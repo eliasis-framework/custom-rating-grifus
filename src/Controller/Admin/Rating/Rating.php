@@ -36,6 +36,8 @@ class Rating extends Controller {
      * Set movie rating
      * 
      * @since 1.0.0
+     *
+     * @return void
      */
     public function setMovieRating() {
 
@@ -51,17 +53,41 @@ class Rating extends Controller {
         $postID = $_POST['postID'];
         $vote   = $_POST['vote'];
 
+        $this->clearCache($postID);
+
         $response = $this->model->setMovieRating($postID, $vote);
 
         echo json_encode($response, true);
 
         die();
     }
+    
+    /**
+     * Set movie rating
+     * 
+     * @since 1.0.1
+     *
+     * @param string $postID → post id
+     *
+     * @return void
+     */
+    public function clearCache($postID) {
+
+        /**
+         * WP Super Cache
+         */
+        if (function_exists('wp_cache_post_change')) {
+
+            wp_cache_post_change($postID);
+        }
+    }
 
     /**
      * Restart all ratings.
      * 
      * @since 1.0.0
+     *
+     * @return void
      */
     public function restartAllRatings() {
 
