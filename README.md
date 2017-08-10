@@ -75,6 +75,7 @@ This pluggin is supported by PHP versions 5.3 or higher and is compatible with H
 ![image](resources/screenshot-34.png)
 ![image](resources/screenshot-35.png)
 ![image](resources/screenshot-36.png)
+![image](resources/screenshot-40.png)
 
 ### Contribute
 1. Check for open issues or open a new issue to start a discussion around a bug or feature.

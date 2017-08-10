@@ -63,9 +63,12 @@
 .replace-button {
   margin-top: 10px; }
 
+.mdl-checkbox {
+  display: inline-table; }
+
 @media (min-width: 840px) {
   .jst-card {
-    max-width: 429px; } }
+    max-width: 429px !important; } }
 @media (max-width: 370px) {
   .jst-card-subtitle {
     font-size: 16px !important; } }

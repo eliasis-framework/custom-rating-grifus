@@ -197,11 +197,7 @@ class Rating extends Model {
      *
      * @return boolean
      */
-    public function restartRating($postID = false) {
-
-        global $post;
-
-        $postID = ($postID) ? $postID : $post->ID;
+    public function restartRating($postID) {
 
         if (!$postID || is_null($postID)) { return false; }
 

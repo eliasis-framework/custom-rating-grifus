@@ -20,8 +20,12 @@
             <div id="spinner-grifus" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
          </div>
          <div class="jst-card-subtitle mdl-card__supporting-text mdl-color-text--grey-600">
-                
-            <br /><?= __('Restart all IMDB ratings', 'extensions-for-grifus-rating') ?>
+         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-rating">
+           <input type="checkbox" id="checkbox-rating" class="mdl-checkbox__input" checked>
+           <span class="mdl-checkbox__label"><?= __('Restart rating when adding a new movie', 'extensions-for-grifus-rating') ?></span>
+         </label><br /><br />
+         <div class="mdl-card__actions mdl-card--border"></div>
+            <?= __('Restart all IMDB ratings', 'extensions-for-grifus-rating') ?>
             <div id="tt4" class="icon material-icons info-icon">info_outline</div>
             <div class="mdl-tooltip mdl-tooltip--large" for="tt4">
             <?= __('This will reset all IMDB ratings to zero', 'extensions-for-grifus-rating') ?>

@@ -75,6 +75,7 @@ Este plugin es soportado por versiones de PHP 5.3 o superiores y es compatible c
 ![image](resources/screenshot-34.png)
 ![image](resources/screenshot-37.png)
 ![image](resources/screenshot-38.png)
+![image](resources/screenshot-40.png)
 
 ### Contribuir
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.

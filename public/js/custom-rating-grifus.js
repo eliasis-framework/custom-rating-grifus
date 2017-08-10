@@ -15,11 +15,11 @@
      /**
       * Styles.
       */
-      var whiteThemeClass = ' white';
+      var colorThemeClass = ' white';
 
       if (customRatingGrifus.dark === "true") {
 
-         whiteThemeClass = ' dark';
+         colorThemeClass = ' dark';
       }
 
       /**
@@ -30,7 +30,7 @@
       $(".bar").remove();
 
       $(".imdb_r").prepend(
-         '<fieldset id="movie-rating" class="rating' + whiteThemeClass + '">' + 
+         '<fieldset id="movie-rating" class="rating' + colorThemeClass + '">' + 
             '<input type="radio" id="star10" name="rating" value="10" />' +
             '<label class = "full" for="star10" title="10 stars"></label>' +
             '<input type="radio" id="star9" name="rating" value="9" />' +
@@ -53,6 +53,8 @@
             '<label class = "full" for="star1" title="1 star"></label>'+
          '</fieldset>'
       );
+
+      $(".rating, .dato").css('opacity', '1');
 
       $('#star' + value.toFixed()).click();
    }
@@ -82,7 +84,7 @@
             url: customRatingGrifus.ajax_url,
             type: "post",
             data: {
-               action:        'setMovieRating',
+               action:        'addMovieRating',
                custom_nonce:  customRatingGrifus.custom_nonce,
                postID:        customRatingGrifus.postID,
                vote:          vote
@@ -110,11 +112,15 @@
 
       if (customRatingGrifus.is_active) {
 
+         changeIMDBsingleName();
+
          selectRating();
 
          ajaxRating();
+      
+      } else {
 
-         changeIMDBsingleName();
+         $(".bar, .dato").css('opacity', '1');
       }
    }
 });

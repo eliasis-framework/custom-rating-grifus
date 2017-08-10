@@ -20,7 +20,8 @@ return [
 
     'path' => [
 
-        'page'      => $ROOT.'src'.$DS.'template'.$DS.'page'  .$DS,
-        'languages' => $ROOT.'languages'.$DS,
+        'page'       => $ROOT.'src'.$DS.'template'.$DS.'page'.$DS,
+        'languages'  => $ROOT.'languages'.$DS,
+        'meta-boxes' => $ROOT.'src'.$DS.'template'.$DS.'meta-boxes'.$DS,
     ],
 ];

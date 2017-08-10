@@ -1,10 +1,53 @@
 # CHANGELOG
 
-## 1.0.1 - 2017-08-04
+## 1.0.1 - 2017-08-10
 
-* Now, on sites that use WP Super Cache it will automatically clear cache when the ratings change. 
+* Now, on sites that use WP Super Cache it will automatically clear cache when the ratings change.
 
+* Added a option in the menu to set whether to restart the rating when adding a new movie.
+
+* Added a section to manually set votes when updating movie.
+
+* The rating has been improved on the front end.
+
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->getRatingState()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->addMovieRating()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->getIp()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->getMovieRating()` method.
 * Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->clearCache()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->getTotalVotes()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->updateRating()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->restartWhenAdd()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->setRatingAndVotes()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->addMetaBoxes()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->renderMetaBoxes()` method.
+
+* Deleted `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->setMovieRating()` method.
+
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Admin\Rating\Rating->getThemeOptions()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Admin\Rating\Rating->getMovieVotes()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Admin\Rating\Rating->setMovieVotes()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Admin\Rating\Rating->setUserVote()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Admin\Rating\Rating->getPosts()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Admin\Rating\Rating->setRestartWhenAdd()` method.
+
+* Deleted `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Admin\Rating\Rating->setMovieParams()` method.
+* Deleted `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Admin\Rating\Rating->restartAllRatings()` method.
+* Deleted `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Admin\Rating\Rating->restartRating()` method.
+* Deleted `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Admin\Rating\Rating->_updateRating()` method.
+
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Launcher\Launcher->setOptions()` method.
+
+* Deleted `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Launcher\Launcher->restartRating()` method.
+
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Launcher\Launcher->addOptions()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Launcher\Launcher->getOptions()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Launcher\Launcher->deleteOptions()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Launcher\Launcher->deleteOptions()` method.
+
+* Added `restartWhenAdd` method in `custom-rating-grifus/public/js/custom-rating-grifus-admin.js` file.
+
+* Added `custom-rating-grifus/src/template/meta-boxes/wp-insert-post.php` file.
 
 ## 1.0.0 - 2017-05-26
 

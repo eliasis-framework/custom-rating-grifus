@@ -130,25 +130,33 @@ class Launcher extends Controller {
 
         App::main()->setMenus($modulePages ,$namespace['admin-page']);
 
-        $this->restartRating();
+        add_action('save_post', [$this, 'restartRating'], 1, 3);
     }
 
     /**
      * Restart rating when added or edited post if not done previously.
      * 
      * @since 1.0.0
+     *
+     * @param int $postID     → post ID
+     * @param object $post    → (WP_Post) post object
+     * @param boolean $update → true if update post
+     *
+     * @return void
      */
-    public function restartRating() {
+    public function restartRating($postID, $post, $update) {
 
-        add_action('wp_insert_post', function() {
+        App::id('ExtensionsForGrifus');
 
-            App::id('ExtensionsForGrifus');
+        $isInsertPost = App::main()->isAfterInsertPost($post, $update);
 
-            if (App::main()->isAfterInsertPost()) {
+        # Prevent overwriting the rating when inserting or updating post
+        unset($_POST['imdbRating'], $_POST['imdbVotes']);
 
-                $this->Rating->restartRating();
-            }
-        });
+        if ($isInsertPost) {
+            
+            $this->Rating->restartRating($postID);
+        }
     }
 
     /**
