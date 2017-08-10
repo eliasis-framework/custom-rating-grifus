@@ -128,8 +128,12 @@ class CustomRating extends Controller {
 
         $page = Module::CustomRatingGrifus()->get('path','page');
 
+        $restart = Module::CustomRatingGrifus()->get('restart-when-add');
+
+        $data = ['restart-when-add' => $restart];
+
         $this->view->renderizate($layout, 'header');
-        $this->view->renderizate($page,   'custom-rating');
+        $this->view->renderizate($page,   'custom-rating', $data);
         $this->view->renderizate($layout, 'footer');       
     }
 
@@ -140,12 +144,9 @@ class CustomRating extends Controller {
      */
     public function runAjax() {
 
-        add_action(
-            'wp_ajax_restartAllRatings',
-            [
-                Module::CustomRatingGrifus()->instance('Rating'), 
-                'restartAllRatings'
-            ]
-        );
+        $Rating = Module::CustomRatingGrifus()->instance('Rating');
+
+        add_action('wp_ajax_restartAllRatings',[$Rating, 'restartAllRatings']);
+        add_action('wp_ajax_restartWhenAdd',[$Rating, 'restartWhenAdd']);
     }
 }

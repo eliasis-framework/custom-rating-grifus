@@ -8,6 +8,10 @@
  * @link       https://github.com/Josantonius/Custom-Rating-Grifus.git
  * @since      1.0.0
  */
+
+use Eliasis\View\View;
+
+$data = View::get();
 ?>
 
 <form enctype="multipart/form-data" id="custom-rating-grifus-form" method="post" action="">
@@ -21,7 +25,7 @@
          </div>
          <div class="jst-card-subtitle mdl-card__supporting-text mdl-color-text--grey-600">
          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-rating">
-           <input type="checkbox" id="checkbox-rating" class="mdl-checkbox__input" checked>
+           <input type="checkbox" id="checkbox-rating" class="mdl-checkbox__input" <?= ($data['restart-when-add']) ? 'checked' : '' ?>>
            <span class="mdl-checkbox__label"><?= __('Restart rating when adding a new movie', 'extensions-for-grifus-rating') ?></span>
          </label><br /><br />
          <div class="mdl-card__actions mdl-card--border"></div>

@@ -66,8 +66,12 @@ class Launcher extends Controller {
      * Module activation hook. Executed when module is activated.
      * 
      * @since 1.0.0
+     *
+     * @return void
      */
     public function activation() {
+
+        $this->model->addOptions();
 
         $this->model->createTables();
     }
@@ -76,10 +80,14 @@ class Launcher extends Controller {
      * Module uninstallation hook. Executed when module is uninstalled.
      * 
      * @since 1.0.0
+     *
+     * @return void
      */
     public function uninstallation() {
 
         $this->model->deletePostMeta();
+
+        $this->model->deleteOptions();
 
         $this->model->removeTables();
     }
@@ -88,6 +96,8 @@ class Launcher extends Controller {
      * Set plugin textdomain.
      * 
      * @since 1.0.0
+     *
+     * @return void
      */
     public function setLanguage() {
 
@@ -106,13 +116,15 @@ class Launcher extends Controller {
      * Run ajax when change the rating.
      * 
      * @since 1.0.0
+     *
+     * @return void
      */
     public function runAjax() {
 
-        $method = [$this->Rating, 'setMovieRating'];
+        $method = [$this->Rating, 'addMovieRating'];
 
-        add_action('wp_ajax_setMovieRating',        $method);
-        add_action('wp_ajax_nopriv_setMovieRating', $method);
+        add_action('wp_ajax_addMovieRating',        $method);
+        add_action('wp_ajax_nopriv_addMovieRating', $method);
     }
     
     /**
@@ -121,8 +133,12 @@ class Launcher extends Controller {
      * @since 1.0.0
      * 
      * @uses add_action() → hooks a function on to a specific action
+     *
+     * @return void
      */
     public function admin() {
+
+        $this->setOptions();
 
         $namespace = Module::CustomRatingGrifus()->get('namespaces');
 
@@ -130,32 +146,29 @@ class Launcher extends Controller {
 
         App::main()->setMenus($modulePages ,$namespace['admin-page']);
 
-        add_action('save_post', [$this, 'restartRating'], 1, 3);
+        add_action('add_meta_boxes', [$this->Rating, 'addMetaBoxes'], 10, 2);
+
+        add_action('save_post', [$this->Rating, 'restartRating'], 1, 3);
+
+        add_action('save_post', [$this->Rating, 'updateRating'], 10, 3);
     }
 
     /**
-     * Restart rating when added or edited post if not done previously.
-     * 
-     * @since 1.0.0
+     * Set database module options.
      *
-     * @param int $postID     → post ID
-     * @param object $post    → (WP_Post) post object
-     * @param boolean $update → true if update post
+     * @since 1.0.1
      *
      * @return void
      */
-    public function restartRating($postID, $post, $update) {
+    public function setOptions() {
 
-        App::id('ExtensionsForGrifus');
+        $slug = Module::CustomRatingGrifus()->get('slug');
 
-        $isInsertPost = App::main()->isAfterInsertPost($post, $update);
+        $options = $this->model->getOptions();
 
-        # Prevent overwriting the rating when inserting or updating post
-        unset($_POST['imdbRating'], $_POST['imdbVotes']);
-
-        if ($isInsertPost) {
+        foreach ($options as $option => $value) {
             
-            $this->Rating->restartRating($postID);
+            Module::CustomRatingGrifus()->set($option, $value);
         }
     }
 
@@ -163,6 +176,8 @@ class Launcher extends Controller {
      * Front initializer method.
      * 
      * @since 1.0.0
+     *
+     * @return void
      */
     public function front() {
    
@@ -189,11 +204,12 @@ class Launcher extends Controller {
      * @since 1.0.0
      *
      * @param string $name → script name
+     *
+     * @return void
      */
     protected function addScripts($name) {
 
-        $params = Module::CustomRatingGrifus()->instance('Rating')
-                                              ->setMovieParams();
+        $params = $this->Rating->setMovieParams();
         
         $settings = Module::CustomRatingGrifus()->get('assets', 'js',$name);
 
@@ -206,6 +222,8 @@ class Launcher extends Controller {
      * Add styles.
      * 
      * @since 1.0.0
+     *
+     * @return void
      */
     protected function addStyles() {
 

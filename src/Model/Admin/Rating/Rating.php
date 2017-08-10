@@ -12,7 +12,7 @@
 namespace ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Admin\Rating;
 
 use Eliasis\Model\Model;
-    
+
 /**
  * Rating model.
  *
@@ -21,71 +21,112 @@ use Eliasis\Model\Model;
 class Rating extends Model {
 
     /**
-     * Set movie params to use on Ajax.
+     * Get theme options.
      * 
-     * @since 1.0.0
+     * @since 1.0.1
      *
      * @return array
      */
-    public function setMovieParams() {
+    public function getThemeOptions() {
 
-        $postID = get_the_ID();
+        return [
 
-        $isActive = true;
-
-        if (empty(get_post_meta($postID, 'imdbTotalVotes',  true))) {
-
-            $isActive = false;
-        }
-
-        $params = [
-
-            'postID'       => $postID,
-            'dark'         => get_option('activar-dark'),
-            'imdb_button'  => __('TOTAL', 'grifus-copy-movie'),
-            'is_active'    => $isActive,
-            'custom_nonce' => wp_create_nonce('customRatingGrifus'),
+            'enable-dark' => get_option('activar-dark'),
         ];
-
-        return $params;
     }
-    
+
     /**
-     * Set movie rating
+     * Get movie votes.
      * 
-     * @since 1.0.0
+     * @since 1.0.1
      *
      * @param string $postID → post id
-     * @param string $postID → votes number
      *
-     * @return array
+     * @return array|false → votes
      */
-    public function setMovieRating($postID, $vote) {
+    public function getMovieVotes($postID) {
 
-        $ip = getenv('HTTP_CLIENT_IP')?:
-        getenv('HTTP_X_FORWARDED_FOR')?:
-        getenv('HTTP_X_FORWARDED')?:
-        getenv('HTTP_FORWARDED_FOR')?:
-        getenv('HTTP_FORWARDED')?:
-        getenv('REMOTE_ADDR');
+        $votes = get_post_meta($postID, 'imdbTotalVotes', true);
 
-        /** Get total votes */
+        if (!empty($votes)) {
 
-        $totalVotes = get_post_meta($postID, 'imdbVotes',  true );
+            return json_decode($votes, true);
+        }
 
-        $totalVotes = ($totalVotes && $totalVotes !== 'N/B') ? $totalVotes : 0;
+        return false;
+    }
 
-        $totalVotes = str_replace(',','', $totalVotes);
+    /**
+     * Set movie votes.
+     * 
+     * @since 1.0.1
+     *
+     * @param string $postID     → post id
+     * @param int    $totalVotes → number of total votes
+     *
+     * @return void
+     */
+    public function setMovieVotes($postID, $totalVotes) {
 
-        /** Get votes by rating */
+        $totalVotes = $totalVotes ?: 'N/B';
 
-        $votes = get_post_meta($postID, 'imdbTotalVotes',  true);
+        if (!add_post_meta($postID, 'imdbVotes', $totalVotes, true)) {
 
-        $votes = json_decode($votes, true);
+            update_post_meta($postID, 'imdbVotes', $totalVotes);
+        }
+    }
 
-        $totalVotes++;
+    /**
+     * Set total votes.
+     * 
+     * @since 1.0.1
+     *
+     * @param string $postID → post id
+     * @param array  $votes  → votes
+     *
+     * @return void
+     */
+    public function setTotalVotes($postID, $votes) {
 
-        /** Add or update vote */
+        $votes = json_encode($votes, true);
+
+        if (!add_post_meta($postID, 'imdbTotalVotes', $votes, true)) {
+
+            update_post_meta($postID, 'imdbTotalVotes', $votes);
+        }
+    }
+
+    /**
+     * Set movie rating.
+     * 
+     * @since 1.0.0
+     *
+     * @param string    $postID  → post id
+     * @param int|float $rating  → movie rating
+     *
+     * @return void
+     */
+    public function setMovieRating($postID, $rating) {
+
+        if (!add_post_meta($postID, 'imdbRating', $rating, true)) {
+
+            update_post_meta($postID, 'imdbRating', $rating);
+        }
+    }
+
+    /**
+     * Add or update vote and associate to an IP address.
+     * 
+     * @since 1.0.1
+     *
+     * @param string $postID → post id
+     * @param array  $votes  → votes
+     * @param array  $vote   → vote
+     * @param array  $ip     → ip
+     *
+     * @return array → movie votes
+     */
+    public function setUserVote($postID, $votes, $vote, $ip) {
         
         global $wpdb;
 
@@ -124,135 +165,44 @@ class Rating extends Model {
 
                 $votes[$vote]++;
             }
-
-            $totalVotes--;
         }
 
-        $votations = [];
-        
-        foreach ($votes as $key => $value) {
-            
-            for ($i=0; $i < $value; $i++) { 
-               $votations[] = $key;
-            }
-        }
-
-        $rating = array_sum($votations) / count($votations);
-
-        $rating = round($rating, 1);
-
-        $votes = json_encode($votes, true);
-
-        $this->_updateRating($postID, $votes, $rating, $totalVotes);
-
-        return $response = [
-
-            'rating' => $rating,
-            'total'  => $totalVotes,
-        ];
+        return $votes;
     }
 
     /**
-     * Restart all ratings.
+     * Get publish posts.
      * 
-     * @since 1.0.0
+     * @since 1.0.1
      *
-     * @return int
+     * @return array → posts
      */
-    public function restartAllRatings() {
-
-        $response['ratings_restarted'] = 0;
+    public function getPosts() {
 
         $totalPosts = wp_count_posts();
 
         $totalPosts = isset($totalPosts->publish) ? $totalPosts->publish : 0;
 
-        $posts = get_posts([
+        return get_posts([
 
             'post_type'   => 'post', 
             'numberposts' => $totalPosts,
             'post_status' => 'publish'
         ]);
-
-        foreach ($posts as $post) {
-
-            if (isset($post->ID)) {
-
-                if ($this->restartRating($post->ID)) {
-
-                    $response['ratings_restarted']++;
-                }
-            }
-        }
-
-        return $response;
     }
 
     /**
-     * Restart rating.
+     * Set state for restart when added a movie.
      * 
-     * @since 1.0.0
+     * @since 1.0.1
      *
-     * @param string $postID → post id
+     * @param string  $slug  → module slug
+     * @param boolean $state → restart when added a movie
      *
-     * @return boolean
+     * @return void
      */
-    public function restartRating($postID) {
+    public function setRestartWhenAdd($slug, $state) {
 
-        if (!$postID || is_null($postID)) { return false; }
-
-        $votes = get_post_meta($postID, 'imdbTotalVotes',  true);
-
-        if (!$votes || empty($votes) || is_null($votes)) {
-
-            $votes = [
-                '1'  => 0,
-                '2'  => 0,
-                '3'  => 0,
-                '4'  => 0,
-                '5'  => 0,
-                '6'  => 0,
-                '7'  => 0,
-                '8'  => 0,
-                '9'  => 0,
-                '10' => 0,
-            ];
-
-            $votes = json_encode($votes, true);
-
-            $this->_updateRating($postID, $votes);
-
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Update rating.
-     * 
-     * @since 1.0.0
-     *
-     * @param string $postID     → post id
-     * @param string $votes      → votes
-     * @param string $rating     → actual rating
-     * @param string $totalVotes → total votes
-     */
-    private function _updateRating($postID, $votes, $rating = 'N/A', $totalVotes = 'N/B') {
-
-        if (!(add_post_meta($postID, 'imdbRating', $rating, true))) {
-
-            update_post_meta($postID, 'imdbRating', $rating);
-        }
-
-        if (!(add_post_meta($postID, 'imdbTotalVotes', $votes, true))) {
-
-            update_post_meta($postID, 'imdbTotalVotes', $votes);
-        }
-
-        if (!(add_post_meta($postID, 'imdbVotes', $totalVotes, true))) {
-
-            update_post_meta($postID, 'imdbVotes', $totalVotes);
-        }
+        update_option($slug . '-restart-when-add', $state);
     }
 }
