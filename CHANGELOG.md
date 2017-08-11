@@ -21,6 +21,7 @@
 * Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->setRatingAndVotes()` method.
 * Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->addMetaBoxes()` method.
 * Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->renderMetaBoxes()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->getDefaultVotes()` method.
 
 * Deleted `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->setMovieRating()` method.
 

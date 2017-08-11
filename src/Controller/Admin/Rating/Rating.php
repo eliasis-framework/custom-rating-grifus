@@ -201,22 +201,9 @@ class Rating extends Controller {
 
             if (App::main()->isAfterInsertPost($post, $update)) {
                 
-                $votes = $this->model->getMovieVotes($postID);
+                if (!$this->model->getMovieVotes($postID)) {
 
-                if (!$votes) {
-
-                    $votes = [
-                        '1'  => 0,
-                        '2'  => 0,
-                        '3'  => 0,
-                        '4'  => 0,
-                        '5'  => 0,
-                        '6'  => 0,
-                        '7'  => 0,
-                        '8'  => 0,
-                        '9'  => 0,
-                        '10' => 0,
-                    ];
+                    $votes = $this->getDefaultVotes($postID);
 
                     $this->setRatingAndVotes($postID, $votes);
 
@@ -250,12 +237,15 @@ class Rating extends Controller {
 
         foreach ($posts as $post) {
 
-            if (isset($post->ID)) {
+            if (isset($post->ID) && !$this->model->getMovieVotes($post->ID)){
 
-                if ($this->restartRating($post->ID)) {
+                $this->setRatingAndVotes(
 
-                    $response['ratings_restarted']++;
-                }
+                    $post->ID, 
+                    $this->getDefaultVotes($post->ID)
+                );
+
+                $response['ratings_restarted']++;
             }
         }
 
@@ -330,6 +320,31 @@ class Rating extends Controller {
         echo json_encode($response);
 
         die();
+    }
+
+    /**
+     * Get default votes.
+     * 
+     * @since 1.0.1
+     *
+     * @param int $postID → post ID
+     *
+     * @return array → default votes
+     */
+    public function getDefaultVotes($postID) {
+
+        return [
+            '1'  => 0,
+            '2'  => 0,
+            '3'  => 0,
+            '4'  => 0,
+            '5'  => 0,
+            '6'  => 0,
+            '7'  => 0,
+            '8'  => 0,
+            '9'  => 0,
+            '10' => 0,
+        ];
     }
 
     /**
