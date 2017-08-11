@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Extensions For Grifus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-10 13:46+0000\n"
-"PO-Revision-Date: 2017-08-10 13:49+0000\n"
+"POT-Creation-Date: 2017-08-11 00:40+0000\n"
+"PO-Revision-Date: 2017-08-11 00:42+0000\n"
 "Last-Translator: Josantonius <hello@josantonius.com>\n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es-ES\n"
@@ -13,43 +13,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: modules/custom-rating-grifus/src/template/page/custom-rating.php:29
-msgid "Restart rating when adding a new movie"
-msgstr "Reiniciar calificación al agregar una nueva película"
-
-#: modules/custom-rating-grifus/src/Controller/Admin/Rating/Rating.php:44
-msgid "TOTAL"
-msgstr "TOTAL"
-
-#: modules/custom-rating-grifus/src/Controller/Admin/Rating/Rating.php:386
-msgid "Extensions For Grifus - Custom rating"
-msgstr "Extensions For Grifus - Clasificación personalizada"
-
 #: modules/custom-rating-grifus/config/menu.php:17
 #: modules/custom-rating-grifus/config/menu.php:18
 #: modules/custom-rating-grifus/src/template/page/custom-rating.php:22
 msgid "Custom Rating"
 msgstr "Custom Rating"
 
+#: modules/custom-rating-grifus/src/template/page/custom-rating.php:29
+msgid "Restart rating when adding a new movie"
+msgstr "Reiniciar calificación al agregar una nueva película"
+
 #: modules/custom-rating-grifus/src/template/page/custom-rating.php:32
 msgid "Restart all IMDB ratings"
-msgstr "Reiniciar las valoraciones"
+msgstr "Reiniciar las calificaciones"
 
 #: modules/custom-rating-grifus/src/template/page/custom-rating.php:35
 msgid "This will reset all IMDB ratings to zero"
-msgstr "Esto restablecerá todas las valoraciones de IMDB a cero"
+msgstr "Esto restablecerá todas las calificaciones de IMDB a cero"
 
 #: modules/custom-rating-grifus/src/template/page/custom-rating.php:42
 msgid "Rating were restarted"
-msgstr "valoraciones reiniciadas"
+msgstr "Calificaciones reiniciadas"
 
 #: modules/custom-rating-grifus/src/template/page/custom-rating.php:43
 msgid "All ratings had already been reset"
-msgstr "Las valoraciones ya  se habían reiniciado"
+msgstr "Las calificaciones ya  se habían reiniciado"
 
 #: modules/custom-rating-grifus/src/template/page/custom-rating.php:48
 msgid "Reset all ratings"
-msgstr "Reiniciar valoraciones"
+msgstr "Reiniciar calificaciones"
+
+#: modules/custom-rating-grifus/src/Controller/Admin/Rating/Rating.php:44
+msgid "TOTAL"
+msgstr "TOTAL"
+
+#: modules/custom-rating-grifus/src/Controller/Admin/Rating/Rating.php:384
+msgid "Extensions For Grifus - Custom rating"
+msgstr "Extensions For Grifus - Calificación personalizada"
 
 #: modules/custom-rating-grifus/src/Controller/Admin/Page/CustomRating/CustomRating.php:86
 msgid "Films were reviewed"

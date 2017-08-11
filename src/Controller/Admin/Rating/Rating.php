@@ -325,8 +325,6 @@ class Rating extends Controller {
 
         $this->model->setRestartWhenAdd($slug, $state);
 
-        Module::CustomRatingGrifus()->set('restart-when-add', $state);
-
         $response = ['restart-when-add' => $state];
 
         echo json_encode($response);
