@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Extensions For Grifus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-08-13 17:03+0000\n"
-"PO-Revision-Date: 2017-08-13 17:06+0000\n"
+"PO-Revision-Date: 2017-08-13 17:07+0000\n"
 "Last-Translator: Josantonius <hello@josantonius.com>\n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es-ES\n"
@@ -19,7 +19,7 @@ msgstr "votos"
 
 #: modules/custom-rating-grifus/src/Controller/Admin/Rating/Rating.php:449
 msgid "Rating"
-msgstr ""
+msgstr "Clasificación"
 
 #: modules/custom-rating-grifus/config/menu.php:17
 #: modules/custom-rating-grifus/config/menu.php:18

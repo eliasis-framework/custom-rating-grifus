@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Extensions For Grifus\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-08-13 17:03+0000\n"
-"PO-Revision-Date: 2017-08-13 17:07+0000\n"
+"PO-Revision-Date: 2017-08-13 20:15+0000\n"
 "Last-Translator: Josantonius <hello@josantonius.com>\n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es-ES\n"
@@ -29,7 +29,7 @@ msgstr "Custom Rating"
 
 #: modules/custom-rating-grifus/src/template/page/custom-rating.php:29
 msgid "Restart rating when adding a new movie"
-msgstr "Reiniciar clasificación al agregar una nueva película"
+msgstr "Reiniciar clasificación al agregar nueva película"
 
 #: modules/custom-rating-grifus/src/template/page/custom-rating.php:32
 msgid "Restart all IMDB ratings"
