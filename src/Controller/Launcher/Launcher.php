@@ -194,7 +194,7 @@ class Launcher extends Controller {
 
                 $this->addStyles();
             
-            } else if (is_home() || is_category() || is_archive()) {
+            } else if (is_home() || is_category() || is_archive() || is_search()) {
 
                 $this->addScripts('customRatingGrifusHome');
             }
