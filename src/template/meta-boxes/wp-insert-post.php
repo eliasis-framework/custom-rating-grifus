@@ -13,17 +13,26 @@ use Eliasis\View\View;
 
 $data = View::get();
 
-$styles = "style='color: #ffb900; font-size: 17px;'";
+$star = "<span class='custom-rating dashicons dashicons-star-filled'></span>";
+?>
+	
+	<div class="custom-rating-grifus">
+		
+		<span id="efg-rating-value">0</span><br>
+		
+		<div class="efg-votes">
+			<span id="efg-total-votes">0</span>
+		</div>
+	
+	</div><br>
 
-$star = "<span class='dashicons dashicons-star-filled' $styles></span>";
-
-foreach ($data['votes'] as $number => $votes): ?>
+<?php foreach ($data['votes'] as $number => $votes): ?>
 
 	<label class="mtt">
 		<?= str_repeat($star, $number); ?>
 	</label>
 	<br>
-	<input type="number" name="efg-rating-<?= $number ?>" value="<?= $votes ?>">
+	<input class="efg-rating-input" type="number" name="efg-rating-<?= $number ?>" data-star="<?= $number ?>" value="<?= $votes ?>">
 	<br><br>
 
 <?php endforeach; ?>

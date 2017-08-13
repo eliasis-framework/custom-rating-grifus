@@ -121,10 +121,13 @@ class Launcher extends Controller {
      */
     public function runAjax() {
 
-        $method = [$this->Rating, 'addMovieRating'];
+        $methods = ['addMovieRating', ''];
 
-        add_action('wp_ajax_addMovieRating',        $method);
-        add_action('wp_ajax_nopriv_addMovieRating', $method);
+        foreach ($methods as $method) {
+            
+            add_action('wp_ajax_'       .$method, [$this->Rating, $method]);
+            add_action('wp_ajax_nopriv_'.$method, [$this->Rating, $method]);
+        }
     }
     
     /**
@@ -185,13 +188,13 @@ class Launcher extends Controller {
 
             App::id('ExtensionsForGrifus');
 
-            if (App::main()->isSingle()) {
+            if (App::main()->isSingle() && !is_preview()) {
 
                 $this->addScripts('customRatingGrifus');
 
                 $this->addStyles();
             
-            } else if (is_home() || is_category()) {
+            } else if (is_home() || is_category() || is_archive()) {
 
                 $this->addScripts('customRatingGrifusHome');
             }

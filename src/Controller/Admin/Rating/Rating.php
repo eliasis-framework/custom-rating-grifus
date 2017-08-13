@@ -13,7 +13,8 @@ namespace ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating
 
 use Eliasis\App\App,
     Eliasis\Module\Module,
-    Eliasis\Controller\Controller;
+    Eliasis\Controller\Controller,
+    Josantonius\WP_Register\WP_Register;
     
 /**
  * Rating controller
@@ -393,6 +394,9 @@ class Rating extends Controller {
         $isActive = $this->getRatingState($post->ID);
 
         if (App::main()->isPublishPost($post) && $isActive) {
+            
+            $this->addStyles();
+            $this->addScripts();
 
             add_meta_box(
                 'info_movie-rating-movie',
@@ -400,8 +404,8 @@ class Rating extends Controller {
                    'extensions-for-grifus-rating'),
                 [$this, 'renderMetaBoxes'],
                 $postType,
-                'advanced',
-                'default'
+                'normal',
+                'high'
             );
         }
     }
@@ -426,5 +430,46 @@ class Rating extends Controller {
         $data = ['votes' => $this->model->getMovieVotes($post->ID)];
 
         $this->view->renderizate($metaBoxes, 'wp-insert-post', $data);  
+    }
+
+    /**
+     * Add scripts.
+     * 
+     * @since 1.0.2
+     *
+     * @return void
+     */
+    protected function addScripts() {
+
+        $script = 'customRatingGrifusEditPost';
+
+        $params = [
+
+            'votes'  => __('votes', 'extensions-for-grifus-rating'),
+            'rating' => __('Rating', 'extensions-for-grifus-rating'),
+        ];
+        
+        $settings = Module::CustomRatingGrifus()->get('assets', 'js', $script);
+
+        $settings['params'] = array_merge($settings['params'], $params);
+
+        WP_Register::add('script', $settings);
+    }
+
+    /**
+     * Add styles.
+     * 
+     * @since 1.0.2
+     *
+     * @return void
+     */
+    protected function addStyles() {
+
+        $css = 'customRatingGrifusEditPost';
+
+        WP_Register::add(
+            'style',  
+            Module::CustomRatingGrifus()->get('assets', 'css', $css)
+        );
     }
 }

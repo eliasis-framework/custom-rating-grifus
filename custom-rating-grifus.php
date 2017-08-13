@@ -13,7 +13,7 @@ return [
 
 	'id'          => 'CustomRatingGrifus',
     'name'        => 'Custom Rating',
-    'version'     => '1.0.1',
+    'version'     => '1.0.2',
     'description' => __('Replaces IMDB rating by your own rating system.', 'extensions-for-grifus'),
     'state'       => 'uninstalled',
     'category'    => 'wp-plugin-extension',

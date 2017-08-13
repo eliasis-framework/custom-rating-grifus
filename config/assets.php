@@ -50,6 +50,17 @@ return [
                     'ajax_url' => admin_url('admin-ajax.php'),
                 ],
             ],
+            'customRatingGrifusEditPost' => [
+                'name'      => 'customRatingGrifusEditPost',
+                'url'       => $js.'custom-rating-grifus-edit-post.js',
+                'place'     => 'admin',
+                'deps'      => ['jquery'],
+                'version'   => '1.0.0',
+                'footer'    => true,
+                'params'    => [
+                    'ajax_url' => admin_url('admin-ajax.php'),
+                ],
+            ],
         ],
         'css' => [
             'customRatingGrifus' => [
@@ -63,6 +74,14 @@ return [
             'customRatingGrifusAdmin' => [
                 'name'      => 'customRatingGrifusAdmin',
                 'url'       => $css . 'custom-rating-grifus-admin.css',
+                'place'     => 'admin',
+                'deps'      => [],
+                'version'   => '1.0.0',
+                'media'     => '',
+            ],
+            'customRatingGrifusEditPost' => [
+                'name'      => 'customRatingGrifusEditPost',
+                'url'       => $css . 'custom-rating-grifus-edit-post.css',
                 'place'     => 'admin',
                 'deps'      => [],
                 'version'   => '1.0.0',

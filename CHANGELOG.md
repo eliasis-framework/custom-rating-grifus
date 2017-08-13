@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## 1.0.2 - 2017-08-13
+
+* Fixed bug on archive or search pages, now will also replace the IMDB legend by TOTAL.
+
+* Now when manipulate it the rating of the movie from the administration panel will show the total number of votes and the rating in real time.
+
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->addScripts()` method.
+* Added `ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating\Rating->addStyles()` method.
+
+* Added `custom-rating-grifus/public/css/custom-rating-grifus-edit-post.css` file.
+
+* Added `custom-rating-grifus/public/sass/admin/custom-rating-grifus-edit-post.sass` file.
+
+* Added `custom-rating-grifus/public/sass/admin/partials/_edit-post.sass` file.
+
+* Added `custom-rating-grifus/public/js/custom-rating-grifus-edit-post.js` file.
+
 ## 1.0.1 - 2017-08-10
 
 * Now, on sites that use WP Super Cache it will automatically clear cache when the ratings change.
