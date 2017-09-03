@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Extensions For Grifus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-13 17:03+0000\n"
-"PO-Revision-Date: 2017-08-13 20:15+0000\n"
+"POT-Creation-Date: 2017-09-03 16:17+0000\n"
+"PO-Revision-Date: 2017-09-03 16:17+0000\n"
 "Last-Translator: Josantonius <hello@josantonius.com>\n"
 "Language-Team: Spanish (Spain)\n"
 "Language: es-ES\n"
@@ -13,14 +13,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: modules/custom-rating-grifus/src/Controller/Admin/Rating/Rating.php:448
-msgid "votes"
-msgstr "votos"
+#: modules/custom-rating-grifus/config/module-info.php:15
+msgid "Replaces IMDB rating by your own rating system."
+msgstr "Reemplaza valoración IMDB por tu propio sistema de valoración."
 
-#: modules/custom-rating-grifus/src/Controller/Admin/Rating/Rating.php:449
-msgid "Rating"
-msgstr "Clasificación"
-
+#: modules/custom-rating-grifus/config/module-info.php:14
 #: modules/custom-rating-grifus/config/menu.php:17
 #: modules/custom-rating-grifus/config/menu.php:18
 #: modules/custom-rating-grifus/src/template/page/custom-rating.php:22
@@ -58,6 +55,14 @@ msgstr "TOTAL"
 #: modules/custom-rating-grifus/src/Controller/Admin/Rating/Rating.php:403
 msgid "Extensions For Grifus - Custom rating"
 msgstr "Extensions For Grifus - Clasificación personalizada"
+
+#: modules/custom-rating-grifus/src/Controller/Admin/Rating/Rating.php:448
+msgid "votes"
+msgstr "votos"
+
+#: modules/custom-rating-grifus/src/Controller/Admin/Rating/Rating.php:449
+msgid "Rating"
+msgstr "Clasificación"
 
 #: modules/custom-rating-grifus/src/Controller/Admin/Page/CustomRating/CustomRating.php:86
 msgid "Films were reviewed"
