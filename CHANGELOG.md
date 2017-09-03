@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 1.0.3 - 2017-09-03
+
+* The PHP configuration file was replaced by a json file.
+
+* Deleted `custom-rating-grifus/custom-rating-grifus.php` file.
+
+* Added `custom-rating-grifus/custom-rating-grifus.jsond` file.
+
+* Added `custom-rating-grifus/config/module-info.php` file.
+
 ## 1.0.2 - 2017-08-13
 
 * Fixed bug on archive or search pages, now will also replace the IMDB legend by TOTAL.

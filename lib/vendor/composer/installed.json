@@ -111,12 +111,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/Eliasis-Framework/Eliasis.git",
-            "reference": "4369819ee8617c8c902635ce8a9d0a5715d4e3b2"
+            "reference": "55d9928d3f6b715e1febb2036a65b4d71fcb192f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Eliasis-Framework/Eliasis/zipball/4369819ee8617c8c902635ce8a9d0a5715d4e3b2",
-            "reference": "4369819ee8617c8c902635ce8a9d0a5715d4e3b2",
+            "url": "https://api.github.com/repos/Eliasis-Framework/Eliasis/zipball/55d9928d3f6b715e1febb2036a65b4d71fcb192f",
+            "reference": "55d9928d3f6b715e1febb2036a65b4d71fcb192f",
             "shasum": ""
         },
         "require": {
@@ -218,12 +218,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/Eliasis-Framework/Module.git",
-            "reference": "e84018a008a1c6df30375641d40feb010df2f178"
+            "reference": "79036f4297e2321d5c9b312b99beb26540ef9151"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Eliasis-Framework/Module/zipball/e84018a008a1c6df30375641d40feb010df2f178",
-            "reference": "e84018a008a1c6df30375641d40feb010df2f178",
+            "url": "https://api.github.com/repos/Eliasis-Framework/Module/zipball/79036f4297e2321d5c9b312b99beb26540ef9151",
+            "reference": "79036f4297e2321d5c9b312b99beb26540ef9151",
             "shasum": ""
         },
         "require": {
@@ -232,7 +232,7 @@
             "josantonius/json": "^1.1.2",
             "php": "^5.6 || ^7.0"
         },
-        "time": "2017-07-25 07:46:14",
+        "time": "2017-08-28 18:06:24",
         "type": "library",
         "extra": {
             "branch-alias": {

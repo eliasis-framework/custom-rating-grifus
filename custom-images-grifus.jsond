@@ -1,0 +1,86 @@
+{
+   "id": "CustomRatingGrifus",
+   "name": "Custom Rating",
+   "version": "1.0.3",
+   "description": "Replaces IMDB rating by your own rating system.",
+   "state": "uninstalled",
+   "category": "wp-plugin-extension",
+   "uri": "https://github.com/Josantonius/Custom-Rating-Grifus.git",
+   "author": "Josantonius",
+   "author-uri": "https://josantonius.com/",
+   "license": "GPL-2.0+",
+   "hooks-controller": "Launcher",
+   "url-import": "https://raw.githubusercontent.com/Josantonius/Custom-Rating-Grifus/master/",
+   "installation-files": {
+      "custom-rating-grifus": {
+         "0": "custom-rating-grifus.jsond",
+         "1": "LICENSE",
+         "2": "composer.json",
+         "config": [
+            "add-urls.php",
+            "assets.php",
+            "menu.php",
+            "module-info.php",
+            "namespaces.php",
+            "pages.php",
+            "paths.php",
+            "set-hooks.php"
+         ],
+         "languages": [
+            "extensions-for-grifus-rating-es_ES.mo",
+            "extensions-for-grifus-rating-es_ES.po"
+         ],
+         "public": {
+            "css": [
+               "custom-rating-grifus.css",
+               "custom-rating-grifus-admin.css",
+               "custom-rating-grifus-edit-post.css"
+            ],
+            "images": [
+               "custom-rating-grifus.png"
+            ],
+            "js": [
+               "custom-rating-grifus.js",
+               "custom-rating-grifus-admin.js",
+               "custom-rating-grifus-home.js",
+               "custom-rating-grifus-edit-post.js"
+            ]
+         },
+         "src": {
+            "Controller": {
+               "Launcher": [
+                  "Launcher.php"
+               ],
+               "Admin": {
+                  "Page": {
+                     "CustomRating": [
+                        "CustomRating.php"
+                     ]
+                  },
+                  "Rating": [
+                     "Rating.php"
+                  ]
+               }
+            },
+            "Model": {
+               "Launcher": [
+                  "Launcher.php"
+               ],
+               "Admin": {
+                  "Rating": [
+                     "Rating.php"
+                  ]
+               }
+            },
+            "template": {
+               "meta-boxes": [
+                  "wp-insert-post.php"
+               ],
+               "page": [
+                  "custom-rating.php"
+               ]
+            }
+         }
+      }
+   }
+}
