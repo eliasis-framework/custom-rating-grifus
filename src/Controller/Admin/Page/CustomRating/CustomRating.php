@@ -14,7 +14,7 @@ namespace ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Page\C
 use Josantonius\WP_Register\WP_Register,
     Josantonius\WP_Menu\WP_Menu,
     Eliasis\App\App,
-    Eliasis\Module\Module,
+    Eliasis\Complement\Type\Module\Module,
     Eliasis\Controller\Controller;
 
 /**

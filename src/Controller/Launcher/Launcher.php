@@ -12,7 +12,7 @@
 namespace ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Launcher;
 
 use Josantonius\WP_Register\WP_Register,
-    Eliasis\Module\Module,
+    Eliasis\Complement\Type\Module\Module,
     Eliasis\Controller\Controller,
     Eliasis\App\App;
     

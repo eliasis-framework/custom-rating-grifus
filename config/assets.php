@@ -9,7 +9,7 @@
  * @since      1.0.0
  */
 
-use Eliasis\Module\Module;
+use Eliasis\Complement\Type\Module\Module;
 
 $css = Module::CustomRatingGrifus()->get('url')['css'];
 $js  = Module::CustomRatingGrifus()->get('url')['js'];

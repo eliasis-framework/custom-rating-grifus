@@ -1,7 +1,7 @@
 {
    "id": "CustomRatingGrifus",
    "name": "Custom Rating",
-   "version": "1.0.3",
+   "version": "1.0.4",
    "description": "Replaces IMDB rating by your own rating system.",
    "state": "uninstalled",
    "category": "wp-plugin-extension",

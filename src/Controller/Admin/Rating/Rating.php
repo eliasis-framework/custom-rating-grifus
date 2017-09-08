@@ -12,7 +12,7 @@
 namespace ExtensionsForGrifus\Modules\CustomRatingGrifus\Controller\Admin\Rating;
 
 use Eliasis\App\App,
-    Eliasis\Module\Module,
+    Eliasis\Complement\Type\Module\Module,
     Eliasis\Controller\Controller,
     Josantonius\WP_Register\WP_Register;
     

@@ -12,7 +12,7 @@
 namespace ExtensionsForGrifus\Modules\CustomRatingGrifus\Model\Launcher;
 
 use Eliasis\Model\Model,
-    Eliasis\Module\Module;
+    Eliasis\Complement\Type\Module\Module;
     
 /**
  * Module main model.
