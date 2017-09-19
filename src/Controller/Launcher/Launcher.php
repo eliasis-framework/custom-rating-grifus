@@ -75,7 +75,7 @@ class Launcher extends Controller {
 
         $this->model->createTables();
     }
-public function installation() {}
+
     /**
      * Module uninstallation hook. Executed when module is uninstalled.
      * 
