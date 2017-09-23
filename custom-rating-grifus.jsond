@@ -6,7 +6,6 @@
       "en": "Replaces IMDB rating by your own rating system.",
       "es": "Reemplaza valoración IMDB por tu propio sistema de valoración."
    },
-   "description": "Replaces IMDB rating by your own rating system.",
    "state": "uninstalled",
    "category": "wp-plugin-extension",
    "uri": "https://github.com/Josantonius/Custom-Rating-Grifus.git",
