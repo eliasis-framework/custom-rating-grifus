@@ -24,7 +24,6 @@
             "add-urls.php",
             "assets.php",
             "menu.php",
-            "module-info.php",
             "namespaces.php",
             "pages.php",
             "paths.php",
