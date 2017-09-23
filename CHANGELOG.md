@@ -4,6 +4,8 @@
 
 * Replaced `eliasis-framework/module` to `eliasis-framework/complement` library.
 
+* Deleted `custom-rating-grifus/config/module-info.php` file.
+
 ## 1.0.3 - 2017-09-03
 
 * The PHP configuration file was replaced by a json file.

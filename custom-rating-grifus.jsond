@@ -2,6 +2,10 @@
    "id": "CustomRatingGrifus",
    "name": "Custom Rating",
    "version": "1.0.4",
+   "description": {
+      "en": "Replaces IMDB rating by your own rating system.",
+      "es": "Reemplaza valoración IMDB por tu propio sistema de valoración."
+   },
    "description": "Replaces IMDB rating by your own rating system.",
    "state": "uninstalled",
    "category": "wp-plugin-extension",
