@@ -1,0 +1,34 @@
+{
+  "name": "custom-rating-grifus",
+  "version": "1.0.5",
+  "description": "Replaces IMDB rating by your own rating system in Grifus theme.",
+  "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Josantonius/Custom-Rating-Grifus.git"
+  },
+  "author": "Josantonius",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/Josantonius/Custom-Rating-Grifus/issues"
+  },
+  "homepage": "https://github.com/Josantonius/Custom-Rating-Grifus#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0"
+  }
+}

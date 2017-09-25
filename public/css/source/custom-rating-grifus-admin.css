@@ -1,0 +1,110 @@
+@charset "UTF-8";
+/**
+ * Custom Rating Grifus · Extensions For Grifus
+ *
+ * @author     Josantonius - hello@josantonius.com
+ * @copyright  Copyright (c) 2017
+ * @license    GPL-2.0+
+ * @link       https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @since      1.0.0
+ */
+.was-done, .nothing-was-done {
+  display: none;
+}
+
+.jst-card-title {
+  margin-right: 10px !important;
+}
+
+#custom-rating-grifus-form {
+  width: 100% !important;
+}
+
+#process {
+  display: none;
+}
+
+#film-title, #film-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  margin: 15px 0px 26px 0px;
+}
+
+.film-revised, .film-counter {
+  font-size: 18px;
+  margin: 6px 4px 4px 6px;
+}
+
+#film-rating-badge {
+  margin-left: 1.5px;
+}
+
+#spinner-grifus {
+  display: none;
+  float: right;
+}
+
+.grifus-span {
+  margin-left: 8px;
+}
+
+.movie-icon {
+  color: #D91E18;
+}
+
+.info-icon {
+  color: #dc143c;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+.picture-icon {
+  color: #446CB3;
+}
+
+.success-icon {
+  color: #50b344;
+}
+
+.g-icons {
+  font-size: 35px !important;
+}
+
+.mdl-card__supporting-text {
+  font-size: 1.1rem !important;
+}
+
+.replace-button {
+  margin-top: 10px;
+}
+
+.mdl-checkbox {
+  display: inline-table;
+}
+
+@media (min-width: 840px) {
+  .jst-card {
+    max-width: 429px !important;
+  }
+}
+
+@media (max-width: 370px) {
+  .jst-card-subtitle {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 455px) {
+  .grifus-span {
+    font-size: 15px;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3VzdG9tLXJhdGluZy1ncmlmdXMtYWRtaW4uY3NzIiwic291cmNlcyI6WyJjdXN0b20tcmF0aW5nLWdyaWZ1cy1hZG1pbi5zYXNzIiwibGF5b3V0L19jdXN0b20tcmF0aW5nLnNhc3MiLCJwYXJ0aWFscy9fY3VzdG9tLXJhdGluZy1zZWN0aW9uLnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBOzs7Ozs7OztHQVFHO0FFUkgsQUFBQSxTQUFTLEVBQUUsQUFBQSxpQkFBaUIsQ0FBQztFQUMzQixPQUFPLEVBQUUsSUFBSTtDQUFJOztBQUVuQixBQUFBLGVBQWUsQ0FBQztFQUNkLFlBQVksRUFBRSxlQUFlO0NBQUk7O0FBRW5DLEFBQUEsMEJBQTBCLENBQUM7RUFDekIsS0FBSyxFQUFFLGVBQWU7Q0FBSTs7QUFFNUIsQUFBQSxRQUFRLENBQUM7RUFDUCxPQUFPLEVBQUUsSUFBSTtDQUFJOztBQUVuQixBQUFBLFdBQVcsRUFBRSxBQUFBLFlBQVksQ0FBQztFQUN4QixPQUFPLEVBQUUsSUFBSTtFQUNiLFdBQVcsRUFBRSxNQUFNO0VBQ25CLFNBQVMsRUFBRSxJQUFJO0VBQ2YsTUFBTSxFQUFFLGlCQUFpQjtDQUFJOztBQUUvQixBQUFBLGFBQWEsRUFBRSxBQUFBLGFBQWEsQ0FBQztFQUMzQixTQUFTLEVBQUUsSUFBSTtFQUNmLE1BQU0sRUFBRSxlQUFlO0NBQUk7O0FBRTdCLEFBQUEsa0JBQWtCLENBQUM7RUFDakIsV0FBVyxFQUFFLEtBQUs7Q0FBSTs7QUFFeEIsQUFBQSxlQUFlLENBQUM7RUFDZCxPQUFPLEVBQUUsSUFBSTtFQUNiLEtBQUssRUFBRSxLQUFLO0NBQUk7O0FBRWxCLEFBQUEsWUFBWSxDQUFDO0VBQ1gsV0FBVyxFQUFFLEdBQUc7Q0FBSTs7QUFFdEIsQUFBQSxXQUFXLENBQUM7RUFDVixLQUFLLEVBQUUsT0FBTztDQUFJOztBQUVwQixBQUFBLFVBQVUsQ0FBQztFQUNULEtBQUssRUFBRSxPQUFPO0VBQ2QsY0FBYyxFQUFFLE1BQU07RUFDdEIsU0FBUyxFQUFFLElBQUk7Q0FBSTs7QUFFckIsQUFBQSxhQUFhLENBQUM7RUFDWixLQUFLLEVBQUUsT0FBTztDQUFJOztBQUVwQixBQUFBLGFBQWEsQ0FBQztFQUNaLEtBQUssRUFBRSxPQUFPO0NBQUk7O0FBRXBCLEFBQUEsUUFBUSxDQUFDO0VBQ1AsU0FBUyxFQUFFLGVBQWU7Q0FBSTs7QUFFaEMsQUFBQSwwQkFBMEIsQ0FBQztFQUN6QixTQUFTLEVBQUUsaUJBQWlCO0NBQUk7O0FBRWxDLEFBQUEsZUFBZSxDQUFDO0VBQ2QsVUFBVSxFQUFFLElBQUk7Q0FBSTs7QUFFdEIsQUFBQSxhQUFhLENBQUM7RUFDWixPQUFPLEVBQUUsWUFBWTtDQUFJOztBQUUzQixNQUFNLEVBQUUsU0FBUyxFQUFFLEtBQUs7RUFDdEIsQUFBQSxTQUFTLENBQUM7SUFDUixTQUFTLEVBQUUsZ0JBQWdCO0dBQUk7OztBQUVuQyxNQUFNLEVBQUUsU0FBUyxFQUFFLEtBQUs7RUFDdEIsQUFBQSxrQkFBa0IsQ0FBQztJQUNqQixTQUFTLEVBQUUsZUFBZTtHQUFJOzs7QUFFbEMsTUFBTSxFQUFFLFNBQVMsRUFBRSxLQUFLO0VBQ3RCLEFBQUEsWUFBWSxDQUFDO0lBQ1gsU0FBUyxFQUFFLElBQUk7R0FBSSJ9 */
+
+/*# sourceMappingURL=custom-rating-grifus-admin.css.map */

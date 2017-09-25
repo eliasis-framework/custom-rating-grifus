@@ -1,7 +1,7 @@
 {
    "id": "CustomRatingGrifus",
    "name": "Custom Rating",
-   "version": "1.0.4",
+   "version": "1.0.5",
    "description": {
       "en": "Replaces IMDB rating by your own rating system.",
       "es": "Reemplaza valoración IMDB por tu propio sistema de valoración."
@@ -33,20 +33,31 @@
             "extensions-for-grifus-rating-es_ES.po"
          ],
          "public": {
-            "css": [
-               "custom-rating-grifus.css",
-               "custom-rating-grifus-admin.css",
-               "custom-rating-grifus-edit-post.css"
-            ],
+            "css": {
+               "0": "custom-rating-grifus.min.css",
+               "1": "custom-rating-grifus-admin.min.css",
+               "2": "custom-rating-grifus-edit-post.min.css",
+               "source": [
+                  "custom-rating-grifus.css",
+                  "custom-rating-grifus-admin.css",
+                  "custom-rating-grifus-edit-post.css"
+               ]
+            },
             "images": [
                "custom-rating-grifus.png"
             ],
-            "js": [
-               "custom-rating-grifus.js",
-               "custom-rating-grifus-admin.js",
-               "custom-rating-grifus-home.js",
-               "custom-rating-grifus-edit-post.js"
-            ]
+            "js": {
+               "0": "custom-rating-grifus.min.js",
+               "1": "custom-rating-grifus-admin.min.js",
+               "2": "custom-rating-grifus-edit-post.min.js",
+               "3": "custom-rating-grifus-home.min.js",
+               "source": [
+                  "ccustom-rating-grifus.js",
+                  "custom-rating-grifus-admin.js",
+                  "custom-rating-grifus-edit-post.js",
+                  "custom-rating-grifus-home.js"
+               ]
+            }
          },
          "src": {
             "Controller": {

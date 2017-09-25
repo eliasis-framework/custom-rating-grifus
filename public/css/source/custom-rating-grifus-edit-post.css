@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/**
+ * Custom Rating Grifus · Extensions For Grifus
+ *
+ * @author     Josantonius - hello@josantonius.com
+ * @copyright  Copyright (c) 2017
+ * @license    GPL-2.0+
+ * @link       https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @since      1.0.2
+ */
+#rating-tab, .custom-rating-grifus {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 6px;
+}
+
+.custom-rating {
+  color: #ffb900;
+  font-size: 17px;
+}
+
+.custom-rating-grifus {
+  text-align: center;
+  font-size: 16px;
+  padding: 15px;
+  color: #495567;
+  border-radius: 4px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  background: #f1f1f1;
+}
+
+#efg-rating-value {
+  font-size: 23px;
+  color: #1f97ab;
+  font-weight: 500;
+}
+
+.efg-votes {
+  margin-top: 7px;
+  font-weight: 100;
+}
+
+#imdbVotes, #imdbRating {
+  cursor: not-allowed;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3VzdG9tLXJhdGluZy1ncmlmdXMtZWRpdC1wb3N0LmNzcyIsInNvdXJjZXMiOlsiY3VzdG9tLXJhdGluZy1ncmlmdXMtZWRpdC1wb3N0LnNhc3MiLCJwYXJ0aWFscy9fZWRpdC1wb3N0LnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBOzs7Ozs7OztHQVFHO0FDUkgsQUFBQSxXQUFXLEVBQUUsQUFBQSxxQkFBcUIsQ0FBQztFQUNqQyxLQUFLLEVBQUUsV0FBVztFQUNsQixPQUFPLEVBQUUsT0FBTztDQUFJOztBQUV0QixBQUFBLGNBQWMsQ0FBQztFQUNiLEtBQUssRUFBRSxPQUFPO0VBQ2QsU0FBUyxFQUFFLElBQUk7Q0FBSTs7QUFFckIsQUFBQSxxQkFBcUIsQ0FBQztFQUNwQixVQUFVLEVBQUUsTUFBTTtFQUNsQixTQUFTLEVBQUUsSUFBSTtFQUNmLE9BQU8sRUFBRSxJQUFJO0VBQ2IsS0FBSyxFQUFFLE9BQU87RUFDZCxhQUFhLEVBQUUsR0FBRztFQUNsQixLQUFLLEVBQUUsV0FBVztFQUNsQixNQUFNLEVBQUUsSUFBSTtFQUNaLFVBQVUsRUFBRSxPQUFPO0NBQUk7O0FBRXpCLEFBQUEsaUJBQWlCLENBQUM7RUFDaEIsU0FBUyxFQUFFLElBQUk7RUFDZixLQUFLLEVBQUUsT0FBTztFQUNkLFdBQVcsRUFBRSxHQUFHO0NBQUk7O0FBRXRCLEFBQUEsVUFBVSxDQUFDO0VBQ1QsVUFBVSxFQUFFLEdBQUc7RUFDZixXQUFXLEVBQUUsR0FBRztDQUFJOztBQUV0QixBQUFBLFVBQVUsRUFBRSxBQUFBLFdBQVcsQ0FBQztFQUN0QixNQUFNLEVBQUUsV0FBVztDQUFJIn0= */
+
+/*# sourceMappingURL=custom-rating-grifus-edit-post.css.map */
