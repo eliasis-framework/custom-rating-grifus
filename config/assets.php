@@ -21,7 +21,7 @@ return [
         'js' => [
             'customRatingGrifus' => [
                 'name'      => 'customRatingGrifus',
-                'url'       => $js . 'custom-rating-grifus.js',
+                'url'       => $js . 'custom-rating-grifus.min.js',
                 'place'     => 'front',
                 'deps'      => ['jquery'],
                 'version'   => '1.0.0',
@@ -32,7 +32,7 @@ return [
             ],
             'customRatingGrifusHome' => [
                 'name'      => 'customRatingGrifusHome',
-                'url'       => $js . 'custom-rating-grifus-home.js',
+                'url'       => $js . 'custom-rating-grifus-home.min.js',
                 'place'     => 'front',
                 'deps'      => ['jquery'],
                 'version'   => '1.0.0',
@@ -41,7 +41,7 @@ return [
             ],
             'customRatingGrifusAdmin' => [
                 'name'      => 'customRatingGrifusAdmin',
-                'url'       => $js . 'custom-rating-grifus-admin.js',
+                'url'       => $js . 'custom-rating-grifus-admin.min.js',
                 'place'     => 'admin',
                 'deps'      => ['jquery'],
                 'version'   => '1.0.0',
@@ -52,7 +52,7 @@ return [
             ],
             'customRatingGrifusEditPost' => [
                 'name'      => 'customRatingGrifusEditPost',
-                'url'       => $js.'custom-rating-grifus-edit-post.js',
+                'url'       => $js.'custom-rating-grifus-edit-post.min.js',
                 'place'     => 'admin',
                 'deps'      => ['jquery'],
                 'version'   => '1.0.0',
@@ -65,7 +65,7 @@ return [
         'css' => [
             'customRatingGrifus' => [
                 'name'      => 'customRatingGrifus',
-                'url'       => $css . 'custom-rating-grifus.css',
+                'url'       => $css . 'custom-rating-grifus.min.css',
                 'place'     => 'front',
                 'deps'      => [],
                 'version'   => '1.0.0',
@@ -73,7 +73,7 @@ return [
             ],
             'customRatingGrifusAdmin' => [
                 'name'      => 'customRatingGrifusAdmin',
-                'url'       => $css . 'custom-rating-grifus-admin.css',
+                'url'       => $css . 'custom-rating-grifus-admin.min.css',
                 'place'     => 'admin',
                 'deps'      => [],
                 'version'   => '1.0.0',
@@ -81,7 +81,7 @@ return [
             ],
             'customRatingGrifusEditPost' => [
                 'name'      => 'customRatingGrifusEditPost',
-                'url'       => $css . 'custom-rating-grifus-edit-post.css',
+                'url'       => $css . 'custom-rating-grifus-edit-post.min.css',
                 'place'     => 'admin',
                 'deps'      => [],
                 'version'   => '1.0.0',

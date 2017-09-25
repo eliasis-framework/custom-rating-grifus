@@ -52,7 +52,7 @@
                "2": "custom-rating-grifus-edit-post.min.js",
                "3": "custom-rating-grifus-home.min.js",
                "source": [
-                  "ccustom-rating-grifus.js",
+                  "custom-rating-grifus.js",
                   "custom-rating-grifus-admin.js",
                   "custom-rating-grifus-edit-post.js",
                   "custom-rating-grifus-home.js"
