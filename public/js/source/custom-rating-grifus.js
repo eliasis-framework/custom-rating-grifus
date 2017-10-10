@@ -17,7 +17,7 @@
       */
       var colorThemeClass = ' white';
 
-      if (customRatingGrifus.dark === "true") {
+      if (eliasis.dark === "true") {
 
          colorThemeClass = ' dark';
       }
@@ -69,7 +69,7 @@
 
       $(".dato a").each(function() {
          var text = $(this).text();
-         text = text.replace("IMDB", customRatingGrifus.imdb_button);
+         text = text.replace("IMDB", eliasis.imdb_button);
          $(this).text(text);
       });
    }
@@ -81,13 +81,13 @@
          var vote = $(this).val();
 
          $.ajax({
-            url: customRatingGrifus.ajax_url,
+            url: eliasis.ajax_url,
             type: "post",
             data: {
-               action:        'addMovieRating',
-               custom_nonce:  customRatingGrifus.custom_nonce,
-               postID:        customRatingGrifus.postID,
-               vote:          vote
+               action: 'addMovieRating',
+               nonce:  eliasis.nonce,
+               postID: eliasis.postID,
+               vote:   vote
             },
             success:function(data){
 
@@ -110,7 +110,7 @@
 
    if($(".imdb_r a:first, .dato a:first").length) {
 
-      if (customRatingGrifus.is_active) {
+      if (eliasis.is_active) {
 
          changeIMDBsingleName();
 

@@ -20,11 +20,11 @@
       function restartAllRatings() {
 
          $.ajax({
-            url: customRatingGrifusAdmin.ajax_url,
+            url: eliasis.ajax_url,
             type: "post",
             data: {
-               action:        'restartAllRatings',
-               custom_nonce:  customRatingGrifusAdmin.custom_nonce
+               action: 'restartAllRatings',
+               nonce:  eliasis.nonce
             },
             success:function(data) {
 
@@ -66,12 +66,12 @@
       function restartWhenAdd(state) {
 
          $.ajax({
-            url: customRatingGrifusAdmin.ajax_url,
+            url: eliasis.ajax_url,
             type: "post",
             data: {
-               action:        'restartWhenAdd',
-               state:         state,
-               custom_nonce:  customRatingGrifusAdmin.custom_nonce
+               action: 'restartWhenAdd',
+               state:  state,
+               nonce:  eliasis.nonce
             },
             success:function(data) {
 

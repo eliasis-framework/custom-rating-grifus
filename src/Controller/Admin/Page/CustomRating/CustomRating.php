@@ -87,7 +87,6 @@ class CustomRating extends Controller {
                 'Films were reviewed', 
                 'extensions-for-grifus-rating'
             ),
-            'custom_nonce' => wp_create_nonce('customRatingGrifusAdmin'),
         ];
 
         $settings['params'] = array_merge($settings['params'], $params);

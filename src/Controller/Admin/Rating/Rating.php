@@ -44,7 +44,6 @@ class Rating extends Controller {
             'dark'         => $options['enable-dark'],
             'imdb_button'  => __('TOTAL', 'extensions-for-grifus-rating'),
             'is_active'    => $isActive,
-            'custom_nonce' => wp_create_nonce('customRatingGrifus'),
         ];
 
         return $params;
@@ -73,7 +72,7 @@ class Rating extends Controller {
      */
     public function addMovieRating() {
 
-        $nonce = isset($_POST['custom_nonce']) ? $_POST['custom_nonce'] : '';
+        $nonce = isset($_POST['nonce']) ? $_POST['nonce'] : '';
 
         $nonce = wp_verify_nonce($nonce, 'customRatingGrifus');
 
@@ -225,9 +224,9 @@ class Rating extends Controller {
      */
     public function restartAllRatings() {
 
-        $nonce = isset($_POST['custom_nonce']) ? $_POST['custom_nonce'] : '';
+        $nonce = isset($_POST['nonce']) ? $_POST['nonce'] : '';
 
-        if (!wp_verify_nonce( $nonce, 'customRatingGrifusAdmin')) {
+        if (!wp_verify_nonce($nonce, 'eliasis')) {
             
             die('Busted!');
         }
@@ -304,8 +303,8 @@ class Rating extends Controller {
 
         $nonce = wp_verify_nonce(
 
-            isset($_POST['custom_nonce']) ? $_POST['custom_nonce'] : false, 
-            'customRatingGrifusAdmin'
+            isset($_POST['nonce']) ? $_POST['nonce'] : false, 
+            'eliasis'
         );
 
         if (!$nonce || is_null($state)) { die; }
