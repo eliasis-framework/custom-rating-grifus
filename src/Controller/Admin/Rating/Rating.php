@@ -74,7 +74,7 @@ class Rating extends Controller {
 
         $nonce = isset($_POST['nonce']) ? $_POST['nonce'] : '';
 
-        $nonce = wp_verify_nonce($nonce, 'customRatingGrifus');
+        $nonce = wp_verify_nonce($nonce, 'eliasis');
 
         if (!$nonce || !isset($_POST['postID'], $_POST['vote'])) { die; }
 
