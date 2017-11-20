@@ -61,12 +61,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/Josantonius/WP_Register.git",
-            "reference": "294fa1de120575c88335a5fda63317b7273b539b"
+            "reference": "d80a9faa732a177aa591b2e30daeb850e03a4289"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Josantonius/WP_Register/zipball/294fa1de120575c88335a5fda63317b7273b539b",
-            "reference": "294fa1de120575c88335a5fda63317b7273b539b",
+            "url": "https://api.github.com/repos/Josantonius/WP_Register/zipball/d80a9faa732a177aa591b2e30daeb850e03a4289",
+            "reference": "d80a9faa732a177aa591b2e30daeb850e03a4289",
             "shasum": ""
         },
         "require": {
@@ -75,7 +75,7 @@
         "require-dev": {
             "josantonius/file": "^1.1.4"
         },
-        "time": "2017-10-10 06:15:58",
+        "time": "2017-10-10 08:01:41",
         "type": "library",
         "extra": {
             "branch-alias": {

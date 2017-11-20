@@ -14,7 +14,7 @@
        
       $(".dato").each(function() {
          var text = $(this).text();
-         text = text.replace("IMDB", customRatingGrifusHome.imdb_button);
+         text = text.replace("IMDB", eliasis.imdb_button);
          $(this).text(text);
       });
    }

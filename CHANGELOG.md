@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.6 - 2017-11-20
+
+* Undefined variable was corrected on `custom-rating-grifus-home.min.js`.
+
 ## 1.0.5 - 2017-09-25
 
 * Gulp was added to the project for task automation.
