@@ -1,27 +1,26 @@
 <?php
 /**
  * Custom Rating Grifus · Extensions For Grifus
- * 
- * @author     Josantonius - hello@josantonius.com
- * @copyright  Copyright (c) 2017
- * @license    GPL-2.0+
- * @link       https://github.com/Josantonius/Custom-Rating-Grifus.git
- * @since      1.0.0
+ *
+ * @author    Josantonius <hello@josantonius.com>
+ * @package   Josantonius/Custom-Rating-Grifus
+ * @copyright 2017 - 2018 (c) Josantonius - Custom Rating Grifus
+ * @license   GPL-2.0+
+ * @link      https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @since     1.0.0
  */
 
-use Eliasis\App\App,
-	Eliasis\Complement\Type\Module\Module;
+use Eliasis\Framework\App;
+use Eliasis\Complement\Type\Module;
 
-$DS = App::DS;
-
-$ROOT = Module::CustomRatingGrifus()->get('path', 'root');
+$root_path = Module::CustomRatingGrifus()->getOption( 'path', 'root' );
 
 return [
 
-    'path' => [
+	'path' => [
 
-        'page'       => $ROOT.'src'.$DS.'template'.$DS.'page'.$DS,
-        'languages'  => $ROOT.'languages'.$DS,
-        'meta-boxes' => $ROOT.'src'.$DS.'template'.$DS.'meta-boxes'.$DS,
-    ],
+		'page'       => $root_path . 'src/template/page/',
+		'languages'  => $root_path . 'languages/',
+		'meta-boxes' => $root_path . 'src/template/meta-boxes/',
+	],
 ];

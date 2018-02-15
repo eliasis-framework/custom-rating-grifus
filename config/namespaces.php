@@ -1,26 +1,25 @@
 <?php
 /**
  * Custom Rating Grifus · Extensions For Grifus
- * 
- * @author     Josantonius - hello@josantonius.com
- * @copyright  Copyright (c) 2017
- * @license    GPL-2.0+
- * @link       https://github.com/Josantonius/Custom-Rating-Grifus.git
- * @since      1.0.0
+ *
+ * @author    Josantonius <hello@josantonius.com>
+ * @package   Josantonius/Custom-Rating-Grifus
+ * @copyright 2017 - 2018 (c) Josantonius - Custom Rating Grifus
+ * @license   GPL-2.0+
+ * @link      https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @since     1.0.0
  */
 
-use Eliasis\App\App;
+use Eliasis\Framework\App;
 
-$namespace = App::ExtensionsForGrifus()->get('namespaces', 'modules');
-
-$module = 'CustomRatingGrifus';
+$namespace = App::EFG()->getOption( 'namespaces', 'modules' );
 
 return [
 
-    'namespaces' => [
+	'namespaces' => [
 
-        'controller' => $namespace . $module . '\\Controller\\',
-        'admin-controller' => $namespace . $module . '\\Controller\\Admin\\',
-        'admin-page' => $namespace . $module . '\\Controller\\Admin\\Page\\',
-    ],
+		'controller' => $namespace . 'CustomRatingGrifus\\Controller\\',
+		'admin-controller' => $namespace . 'CustomRatingGrifus\\Controller\\Admin\\',
+		'admin-page' => $namespace . 'CustomRatingGrifus\\Controller\\Admin\\Page\\',
+	],
 ];

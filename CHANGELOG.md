@@ -1,8 +1,22 @@
 # CHANGELOG
 
+## 1.0.7 - 2018-02-15
+
+* Implemented `PHP Mess Detector` to detect inconsistencies in code styles.
+
+* Implemented `PHP Code Beautifier and Fixer` to fixing errors automatically.
+
+* Implemented `PHP Coding Standards Fixer` to organize PHP code automatically according to WordPress standards.
+
+* Implemented `Codacy` to automates code reviews and monitors code quality over time.
+
+* Implemented `Codecov` to coverage reports.
+
 ## 1.0.6 - 2017-11-20
 
 * Undefined variable was corrected on `custom-rating-grifus-home.min.js`.
+
+* Implemented `WordPress PHPCS code standard` from all library PHP files.
 
 ## 1.0.5 - 2017-09-25
 
