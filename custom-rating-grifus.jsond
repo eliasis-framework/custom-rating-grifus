@@ -60,30 +60,20 @@
             }
          },
          "src": {
-            "Controller": {
-               "Launcher": [
-                  "Launcher.php"
-               ],
-               "Admin": {
-                  "Page": {
-                     "CustomRating": [
-                        "CustomRating.php"
-                     ]
-                  },
-                  "Rating": [
-                     "Rating.php"
+            "controller": {
+               "0": "class-launcher.php",
+               "admin": {
+                  "0": "class-rating.php",
+                  "page": [
+                     "class-custom-rating.php"
                   ]
                }
             },
-            "Model": {
-               "Launcher": [
-                  "Launcher.php"
-               ],
-               "Admin": {
-                  "Rating": [
-                     "Rating.php"
-                  ]
-               }
+            "model": {
+               "0": "class-launcher.php",
+               "admin": [
+                  "class-rating.php"
+               ]
             },
             "template": {
                "meta-boxes": [
