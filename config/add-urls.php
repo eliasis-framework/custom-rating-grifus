@@ -6,12 +6,12 @@
  * @package   Josantonius/Custom-Rating-Grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Rating Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-rating-grifus.git
  * @since     1.0.0
  */
 
-use Eliasis\Framework\App,
-	Eliasis\Complement\Type\Module;
+use Eliasis\Framework\App;
+use Eliasis\Complement\Type\Module;
 
 $url = App::MODULES_URL() . Module::CustomRatingGrifus()->getOption( 'folder' );
 

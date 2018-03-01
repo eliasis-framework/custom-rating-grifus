@@ -6,7 +6,7 @@
  * @package   Josantonius/Custom-Rating-Grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Rating Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-rating-grifus.git
  * @since     1.0.0
  */
 
@@ -65,10 +65,10 @@ class Rating extends Controller {
 	public function add_movie_rating() {
 
 		$nonce = isset( $_POST['nonce'] ) ? $_POST['nonce'] : '';
-		$nonce = wp_verify_nonce( $nonce, 'eliasis' );
 
-		if ( ! $nonce || ! isset( $_POST['postID'], $_POST['vote'] ) ) {
-			die; }
+		if ( ! wp_verify_nonce( $nonce, 'eliasis' ) && ! wp_verify_nonce( $nonce, 'customRatingGrifus' ) ) {
+			die( 'Busted!' );
+		}
 
 		$ip = $this->get_ip();
 		$vote = $_POST['vote'];
@@ -170,7 +170,7 @@ class Rating extends Controller {
 
 		if ( Module::CustomRatingGrifus()->getOption( 'restart-when-add' ) ) {
 			unset( $_POST['imdbRating'], $_POST['imdbVotes'] );
-			if ( App::main()->isAfterInsertPost( $post, $update ) ) {
+			if ( App::main()->is_after_insert_post( $post, $update ) ) {
 				if ( ! $this->model->get_movie_votes( $post_id ) ) {
 					$votes = $this->get_default_votes( $post_id );
 					$this->set_rating_and_votes( $post_id, $votes );
@@ -189,7 +189,7 @@ class Rating extends Controller {
 
 		$nonce = isset( $_POST['nonce'] ) ? $_POST['nonce'] : '';
 
-		if ( ! wp_verify_nonce( $nonce, 'eliasis' ) ) {
+		if ( ! wp_verify_nonce( $nonce, 'eliasis' ) && ! wp_verify_nonce( $nonce, 'customRatingGrifusAdmin' ) ) {
 			die( 'Busted!' );
 		}
 
@@ -249,13 +249,10 @@ class Rating extends Controller {
 	public function restart_when_add() {
 
 		$state = isset( $_POST['state'] ) ? $_POST['state'] : null;
-		$nonce = wp_verify_nonce(
-			isset( $_POST['nonce'] ) ? $_POST['nonce'] : false,
-			'eliasis'
-		);
+		$nonce = isset( $_POST['nonce'] ) ? $_POST['nonce'] : '';
 
-		if ( ! $nonce || is_null( $state ) ) {
-			die;
+		if ( ! wp_verify_nonce( $nonce, 'eliasis' ) && ! wp_verify_nonce( $nonce, 'customRatingGrifusAdmin' ) ) {
+			die( 'Busted!' );
 		}
 
 		App::setCurrentID( 'EFG' );
@@ -334,7 +331,7 @@ class Rating extends Controller {
 
 		$is_active = $this->get_rating_state( $post->ID );
 
-		if ( App::main()->isPublishPost( $post ) && $is_active ) {
+		if ( App::main()->is_publish_post( $post ) && $is_active ) {
 
 			$this->add_styles();
 			$this->add_scripts();

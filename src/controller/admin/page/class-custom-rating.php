@@ -6,7 +6,7 @@
  * @package   Josantonius/Custom-Rating-Grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Rating Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-rating-grifus.git
  * @since     1.0.0
  */
 
@@ -51,8 +51,8 @@ class CustomRating extends Controller {
 			'submenu',
 			$submenu['custom-rating-grifus'],
 			[ $this, 'render' ],
-			'add_scripts',
-			'add_styles'
+			[ $this, 'add_scripts' ],
+			[ $this, 'add_styles' ]
 		);
 	}
 
@@ -133,7 +133,7 @@ class CustomRating extends Controller {
 
 		$rating = Module::CustomRatingGrifus()->getControllerInstance( 'Rating' );
 
-		add_action( 'wp_ajax_restartAllRatings', [ $rating, 'restartAllRatings' ] );
-		add_action( 'wp_ajax_restartWhenAdd', [ $rating, 'restartWhenAdd' ] );
+		add_action( 'wp_ajax_restart_all_ratings', [ $rating, 'restart_all_ratings' ] );
+		add_action( 'wp_ajax_restart_when_add', [ $rating, 'restart_when_add' ] );
 	}
 }

@@ -6,7 +6,7 @@
  * @package   Josantonius/Custom-Rating-Grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Rating Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-rating-grifus.git
  * @since     1.0.0
  */
 
@@ -31,17 +31,19 @@ class Launcher extends Model {
 
 		$table_name = $wpdb->prefix . 'efg_custom_rating';
 
-		$sql = "CREATE TABLE IF NOT EXISTS $table_name (
-          id      mediumint(9) NOT NULL AUTO_INCREMENT,
-          post_id mediumint(9) NOT NULL,
-          ip      varchar(45)  NOT NULL,
-          vote    int(2)       NOT NULL,
-          PRIMARY KEY  (id)
-        ) $charset_collate;";
+		if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name ) {
+			$sql = "CREATE TABLE $table_name (
+	          id      mediumint(9) NOT NULL AUTO_INCREMENT,
+	          post_id mediumint(9) NOT NULL,
+	          ip      varchar(45)  NOT NULL,
+	          vote    int(2)       NOT NULL,
+	          PRIMARY KEY  (id)
+	        ) $charset_collate;";
 
-		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
-		dbDelta( $sql );
+			dbDelta( $sql );
+		}
 	}
 
 	/**

@@ -5,11 +5,17 @@
  * @package   Josantonius/Custom-Rating-Grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Rating Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-rating-grifus.git
  * @since     1.0.0
  */
 
  jQuery(document).ready( function($) {
+
+   if (typeof eliasis !== 'undefined') {
+      var custom_rating_grifus = eliasis;
+   } else {
+      var custom_rating_grifus = customRatingGrifus;
+   }
 
    function selectRating() {
 
@@ -18,7 +24,7 @@
       */
       var colorThemeClass = ' white';
 
-      if (eliasis.dark === "true") {
+      if (custom_rating_grifus.dark === "true") {
 
          colorThemeClass = ' dark';
       }
@@ -70,7 +76,7 @@
 
       $(".dato a").each(function() {
          var text = $(this).text();
-         text = text.replace("IMDB", eliasis.imdb_button);
+         text = text.replace("IMDB", custom_rating_grifus.imdb_button);
          $(this).text(text);
       });
    }
@@ -82,12 +88,12 @@
          var vote = $(this).val();
 
          $.ajax({
-            url: eliasis.ajax_url,
+            url: custom_rating_grifus.ajax_url,
             type: "post",
             data: {
-               action: 'addMovieRating',
-               nonce:  eliasis.nonce,
-               postID: eliasis.postID,
+               action: 'add_movie_rating',
+               nonce:  custom_rating_grifus.nonce,
+               postID: custom_rating_grifus.postID,
                vote:   vote
             },
             success:function(data){
@@ -111,7 +117,7 @@
 
    if($(".imdb_r a:first, .dato a:first").length) {
 
-      if (eliasis.is_active) {
+      if (custom_rating_grifus.is_active) {
 
          changeIMDBsingleName();
 

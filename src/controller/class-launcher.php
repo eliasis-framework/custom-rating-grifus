@@ -6,7 +6,7 @@
  * @package   Josantonius/Custom-Rating-Grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Rating Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-rating-grifus.git
  * @since     1.0.0
  */
 
@@ -88,7 +88,7 @@ class Launcher extends Controller {
 	 */
 	public function run_ajax() {
 
-		$methods = [ 'addMovieRating' ];
+		$methods = [ 'add_movie_rating' ];
 
 		foreach ( $methods as $method ) {
 			add_action( 'wp_ajax_' . $method, [ $this->rating, $method ] );
@@ -110,9 +110,9 @@ class Launcher extends Controller {
 
 		App::main()->set_menus( $module_pages, $namespace['admin-page'] );
 
-		add_action( 'add_meta_boxes', [ $this->rating, 'addMetaBoxes' ], 10, 2 );
-		add_action( 'save_post', [ $this->rating, 'restartRating' ], 1, 3 );
-		add_action( 'save_post', [ $this->rating, 'updateRating' ], 10, 3 );
+		add_action( 'add_meta_boxes', [ $this->rating, 'add_meta_boxes' ], 10, 2 );
+		add_action( 'save_post', [ $this->rating, 'restart_rating' ], 1, 3 );
+		add_action( 'save_post', [ $this->rating, 'update_rating' ], 10, 3 );
 	}
 
 	/**
@@ -138,7 +138,7 @@ class Launcher extends Controller {
 		add_action(
 			'wp', function() {
 				App::setCurrentID( 'EFG' );
-				if ( App::main()->isSingle() && ! is_preview() ) {
+				if ( App::main()->is_single() && ! is_preview() ) {
 					$this->add_scripts( 'customRatingGrifus' );
 					$this->add_styles();
 				} else if ( is_home() || is_category() || is_archive() || is_search() ) {
@@ -155,7 +155,7 @@ class Launcher extends Controller {
 	 */
 	protected function add_scripts( $name ) {
 
-		$params = $this->rating->setMovieParams();
+		$params = $this->rating->set_movie_params();
 		$settings = Module::CustomRatingGrifus()->getOption( 'assets', 'js', $name );
 		$settings['params'] = array_merge( $settings['params'], $params );
 

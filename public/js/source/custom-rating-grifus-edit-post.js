@@ -5,13 +5,19 @@
  * @package   Josantonius/Custom-Rating-Grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Rating Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-rating-grifus.git
  * @since     1.0.2
  */
-
+ 
 (function ($) {
     
    $(document).ready(function () {
+
+      if (typeof eliasis !== 'undefined') {
+        var custom_rating_grifus_edit_post = eliasis;
+      } else {
+        var custom_rating_grifus_edit_post = customRatingGrifusEditPost;
+      }
 
       setMovieRating();
 
@@ -63,7 +69,7 @@
         $("#info_movie-info-movie > div > div.menus_mt_datos > ul").append(
           '<li>' +
             '<a id="rating-tab" href="#rating">' +
-                customRatingGrifusEditPost.rating +
+                custom_rating_grifus_edit_post.rating +
             '</a>' +
           '</li>'
         );
@@ -101,7 +107,7 @@
         return {
 
           rating:rating, 
-          totalVotes:totalVotes + ' ' + customRatingGrifusEditPost.votes
+          totalVotes:totalVotes + ' ' + custom_rating_grifus_edit_post.votes
         };
       }
 

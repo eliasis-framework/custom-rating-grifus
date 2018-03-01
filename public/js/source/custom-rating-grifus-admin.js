@@ -5,13 +5,19 @@
  * @package   Josantonius/Custom-Rating-Grifus
  * @copyright 2017 - 2018 (c) Josantonius - Custom Rating Grifus
  * @license   GPL-2.0+
- * @link      https://github.com/Josantonius/Custom-Rating-Grifus.git
+ * @link      https://github.com/eliasis-framework/custom-rating-grifus.git
  * @since     1.0.0
  */
 
 (function ($) {
     
    $(document).ready(function () {
+
+      if (typeof eliasis !== 'undefined') {
+        var custom_rating_grifus_admin = eliasis;
+      } else {
+        var custom_rating_grifus_admin = customRatingGrifusAdmin;
+      }
 
       /**
        * Restart all ratings.
@@ -21,11 +27,11 @@
       function restartAllRatings() {
 
          $.ajax({
-            url: eliasis.ajax_url,
+            url: custom_rating_grifus_admin.ajax_url,
             type: "post",
             data: {
-               action: 'restartAllRatings',
-               nonce:  eliasis.nonce
+               action: 'restart_all_ratings',
+               nonce:  custom_rating_grifus_admin.nonce
             },
             success:function(data) {
 
@@ -67,12 +73,12 @@
       function restartWhenAdd(state) {
 
          $.ajax({
-            url: eliasis.ajax_url,
+            url: custom_rating_grifus_admin.ajax_url,
             type: "post",
             data: {
-               action: 'restartWhenAdd',
+               action: 'restart_when_add',
                state:  state,
-               nonce:  eliasis.nonce
+               nonce:  custom_rating_grifus_admin.nonce
             },
             success:function(data) {
 
