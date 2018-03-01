@@ -10,7 +10,7 @@
    "category": "wp-plugin-extension",
    "url": "https://github.com/eliasis-framework/custom-rating-grifus.git",
    "author": "Josantonius",
-   "author-uri": "https://josantonius.com/",
+   "author-url": "https://josantonius.com/",
    "license": "GPL-2.0+",
    "hooks-controller": "Launcher",
    "url-import": "https://raw.githubusercontent.com/eliasis-framework/custom-rating-grifus/master/",
