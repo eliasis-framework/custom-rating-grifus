@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Josantonius/Custom-Rating-Grifus.git"
+    "url": "git+https://github.com/eliasis-framework/custom-rating-grifus.git"
   },
   "author": "Josantonius",
   "license": "GPL-2.0+",
   "bugs": {
-    "url": "https://github.com/Josantonius/Custom-Rating-Grifus/issues"
+    "url": "https://github.com/eliasis-framework/custom-rating-grifus/issues"
   },
-  "homepage": "https://github.com/Josantonius/Custom-Rating-Grifus#readme",
+  "homepage": "https://github.com/eliasis-framework/custom-rating-grifus#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",

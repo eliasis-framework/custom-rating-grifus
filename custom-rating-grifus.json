@@ -8,15 +8,15 @@
    },
    "state": "uninstalled",
    "category": "wp-plugin-extension",
-   "url": "https://github.com/Josantonius/Custom-Rating-Grifus.git",
+   "url": "https://github.com/eliasis-framework/custom-rating-grifus.git",
    "author": "Josantonius",
    "author-uri": "https://josantonius.com/",
    "license": "GPL-2.0+",
    "hooks-controller": "Launcher",
-   "url-import": "https://raw.githubusercontent.com/Josantonius/Custom-Rating-Grifus/master/",
+   "url-import": "https://raw.githubusercontent.com/eliasis-framework/custom-rating-grifus/master/",
    "installation-files": {
       "custom-rating-grifus": {
-         "0": "custom-rating-grifus.jsond",
+         "0": "custom-rating-grifus.json",
          "1": "LICENSE",
          "2": "composer.json",
          "config": [
