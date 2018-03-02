@@ -21,7 +21,7 @@ use Eliasis\Framework\Controller;
 /**
  * Handler Custom Rating Grifus page.
  */
-class CustomRating extends Controller {
+class Custom_Rating extends Controller {
 
 	/**
 	 * Slug for this administration page.

@@ -12,5 +12,5 @@
 
 return [
 
-	'pages' => [ 'CustomRating' ],
+	'pages' => [ 'Custom_Rating' ],
 ];

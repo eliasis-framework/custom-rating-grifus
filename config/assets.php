@@ -18,7 +18,6 @@ $js  = Module::CustomRatingGrifus()->getOption( 'url' )['js'];
 return [
 
 	'assets' => [
-
 		'js' => [
 			'customRatingGrifus' => [
 				'name'      => 'customRatingGrifus',

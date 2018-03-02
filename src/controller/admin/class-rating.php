@@ -29,9 +29,9 @@ class Rating extends Controller {
 	 */
 	public function set_movie_params() {
 
-		$post_id = get_the_ID();
+		$post_id   = get_the_ID();
 		$is_active = $this->get_rating_state( $post_id );
-		$options = $this->model->get_theme_options();
+		$options   = $this->model->get_theme_options();
 
 		$params = [
 			'postID'       => $post_id,
@@ -70,14 +70,15 @@ class Rating extends Controller {
 			die( 'Busted!' );
 		}
 
-		$ip = $this->get_ip();
-		$vote = $_POST['vote'];
+		$ip      = $this->get_ip();
+		$vote    = $_POST['vote'];
 		$post_id = $_POST['postID'];
 
 		$this->clear_cache( $post_id );
 
 		$votes = $this->model->get_movie_votes( $post_id );
 		$votes = $this->model->set_user_vote( $post_id, $votes, $vote, $ip );
+
 		$response = $this->set_rating_and_votes( $post_id, $votes );
 
 		echo json_encode( $response, true );
@@ -194,6 +195,7 @@ class Rating extends Controller {
 		}
 
 		$response['ratings_restarted'] = 0;
+
 		$posts = $this->model->get_posts();
 
 		foreach ( $posts as $post ) {
@@ -364,6 +366,7 @@ class Rating extends Controller {
 		wp_nonce_field( '_rating_movie_nonce', 'rating_movie_nonce' );
 
 		$meta_boxes = Module::CustomRatingGrifus()->getOption( 'path', 'meta-boxes' );
+
 		$data = [ 'votes' => $this->model->get_movie_votes( $post->ID ) ];
 
 		$this->view->renderizate( $meta_boxes, 'wp-insert-post', $data );
@@ -385,6 +388,7 @@ class Rating extends Controller {
 		];
 
 		$settings = Module::CustomRatingGrifus()->getOption( 'assets', 'js', $script );
+
 		$settings['params'] = array_merge( $settings['params'], $params );
 
 		WP_Register::add( 'script', $settings );

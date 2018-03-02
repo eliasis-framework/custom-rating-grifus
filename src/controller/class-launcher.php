@@ -78,6 +78,7 @@ class Launcher extends Controller {
 
 		$plugin_slug = App::EFG()->getOption( 'slug' );
 		$module_slug = Module::CustomRatingGrifus()->getOption( 'slug' );
+
 		$path = $plugin_slug . '/modules/' . $module_slug . '/languages/';
 
 		load_plugin_textdomain( $plugin_slug . '-rating', false, $path );
@@ -105,7 +106,7 @@ class Launcher extends Controller {
 
 		$this->set_options();
 
-		$namespace = Module::CustomRatingGrifus()->getOption( 'namespaces' );
+		$namespace    = Module::CustomRatingGrifus()->getOption( 'namespaces' );
 		$module_pages = Module::CustomRatingGrifus()->getOption( 'pages' );
 
 		App::main()->set_menus( $module_pages, $namespace['admin-page'] );
@@ -122,7 +123,7 @@ class Launcher extends Controller {
 	 */
 	public function set_options() {
 
-		$slug = Module::CustomRatingGrifus()->getOption( 'slug' );
+		$slug    = Module::CustomRatingGrifus()->getOption( 'slug' );
 		$options = $this->model->get_options();
 
 		foreach ( $options as $option => $value ) {
@@ -141,7 +142,7 @@ class Launcher extends Controller {
 				if ( App::main()->is_single() && ! is_preview() ) {
 					$this->add_scripts( 'customRatingGrifus' );
 					$this->add_styles();
-				} else if ( is_home() || is_category() || is_archive() || is_search() ) {
+				} elseif ( is_home() || is_category() || is_archive() || is_search() ) {
 					$this->add_scripts( 'customRatingGrifusHome' );
 				}
 			}
@@ -155,8 +156,9 @@ class Launcher extends Controller {
 	 */
 	protected function add_scripts( $name ) {
 
-		$params = $this->rating->set_movie_params();
+		$params   = $this->rating->set_movie_params();
 		$settings = Module::CustomRatingGrifus()->getOption( 'assets', 'js', $name );
+
 		$settings['params'] = array_merge( $settings['params'], $params );
 
 		WP_Register::add( 'script', $settings );

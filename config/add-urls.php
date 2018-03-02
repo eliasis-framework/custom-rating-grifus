@@ -16,9 +16,7 @@ use Eliasis\Complement\Type\Module;
 $url = App::MODULES_URL() . Module::CustomRatingGrifus()->getOption( 'folder' );
 
 return [
-
 	'url' => [
-
 		'css'    => $url . 'public/css/',
 		'js'     => $url . 'public/js/',
 		'images' => $url . 'public/images/',
