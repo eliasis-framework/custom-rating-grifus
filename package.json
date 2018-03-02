@@ -1,6 +1,6 @@
 {
   "name": "custom-rating-grifus",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Replaces IMDB rating by your own rating system in Grifus theme.",
   "main": "gulpfile.js",
   "directories": {
