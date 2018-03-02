@@ -114,9 +114,10 @@ class Custom_Rating extends Controller {
 	 */
 	public function render() {
 
-		$layout = App::EFG()->getOption( 'path', 'layout' );
-		$page = Module::CustomRatingGrifus()->getOption( 'path', 'page' );
+		$layout  = App::EFG()->getOption( 'path', 'layout' );
+		$page    = Module::CustomRatingGrifus()->getOption( 'path', 'page' );
 		$restart = Module::CustomRatingGrifus()->getOption( 'restart-when-add' );
+
 		$data = [ 'restart-when-add' => $restart ];
 
 		$this->view->renderizate( $layout, 'header' );
